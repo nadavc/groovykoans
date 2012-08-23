@@ -1,0 +1,80 @@
+import java.awt.Desktop
+
+apply plugin: 'groovy'
+apply plugin: 'idea'
+
+version = '0.1'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    def GROOVY_VERSION = '2.0.1'
+
+    groovy "org.codehaus.groovy:groovy:$GROOVY_VERSION"
+    groovy "org.codehaus.groovy:groovy-test:$GROOVY_VERSION"
+}
+
+task removeSolutions << {
+    def solutionsRemoved = 0
+    def solutionRegex = $/(?sm)(// -{12} START EDITING HERE -{22})(\s*\w+.*?)(\s+// -{12} STOP EDITING HERE  -{22})/$
+    sourceSets.test.allSource.files.each { File sourceFile ->
+        solutionsRemoved += (sourceFile.text =~ solutionRegex).count
+        sourceFile.text = sourceFile.text.replaceAll(solutionRegex, '$1\n\n$3')
+    }
+    println "Removed $solutionsRemoved solutions from Koans. Good luck!"
+}
+
+// Adapted from http://www.practicalgradle.org/blog/2011/01/convenient-test-execution-with-camel-case-support/
+tasks.addRule('Pattern: koan<Number>: Runs a single Koan') { String taskName ->
+    if (taskName.startsWith('koan') && taskName.length() > 5) {
+        // create a dummy task for the task name specified on the command line
+        def dummyTask = task(taskName)
+        def koanName = taskName[0].toUpperCase() + taskName[1..-1]
+
+        // make all Test tasks a dependency of the dummy task and reset the includes
+        def testIncludes = WrapUtil.toSet("**/${koanName}.class")
+        tasks.withType(Test) { testTask ->
+            logger.info("Single Koan Execution: apply include pattern to Test task <$testTask.name>")
+            testTask.includes = testIncludes
+            dummyTask.dependsOn testTask
+        }
+    }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.1'
+}
+
+
+// show welcome message
+List<String> lines = file('one-liners.txt').readLines()
+def quote = lines.get(new Random().nextInt(lines.size() - 1))
+println "Groovy Koans ${version}:\n${quote}"
+println "${'-' * quote.size()}\n"
+
+// launch browser if test failed
+gradle.taskGraph.afterTask { task, taskState ->
+    if (task.name != 'test')
+        return
+
+    if (taskState.failure) {
+        String testRepDir = task.testReportDir
+        Desktop.desktop.browse(new File(testRepDir, 'index.html').toURI())
+    } else {
+        println "Koan is complete. Well done!"
+    }
+}
+
+// since we're running in quiet logging, show the user what tests are running
+tasks.withType(Test) { testTask ->
+    testTask.beforeTest { descriptor ->
+        print "Running exercises in $descriptor.name()".padRight(60, '.')
+    }
+    testTask.afterTest { descriptor, result ->
+        println result.resultType
+    }
+}
+
+

@@ -1,0 +1,143 @@
+<!doctype html>
+<head xmlns="http://www.w3.org/1999/html">
+    <title>Groovy Koans: The Missing Groovy Tutorial</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet"/>
+    <script src="js/jquery-1.8.0.min.js"></script>
+    <script type='text/javascript'>
+        $(document).ready(function () {
+            $("[rel='popover']").popover({
+                trigger: 'hover',
+                html: true
+            });
+        });
+
+    </script>
+    <style>
+        body {
+            font-family: sans-serif;
+            font-size: 16px;
+            font-weight: 100;
+            line-height: 1.4;
+            background: white;
+            width: 750px;
+            margin: 2em auto;
+        }
+
+        #groovyLogo {
+            float: left;
+            height: 100px;
+            width: 200px;
+        }
+
+        #what {
+            clear: both;
+        }
+
+        #download {
+            float: right;
+            width: 300px;
+            height: 10em;
+            text-align: center;
+            background-color: #eeeeee;
+            margin-top: 10px;
+            -webkit-border-radius: 6px;
+            -moz-border-radius: 6px;
+        }
+        .popover {
+            width: auto;
+        }
+    </style>
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-34499334-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+</head>
+<body>
+
+<!-- GitHub ribbon -->
+<a href="https://github.com/nadavc"><img style="position: fixed; top: 0; right: 0; border: 0;"
+                                         src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"
+                                         alt="Fork me on GitHub"></a>
+
+<div class="hero-unit">
+    <img id="groovyLogo" src="img/groovy-logo-medium.png"/><h1>Koans</h1>
+    <p>the missing groovy tutorial</p>
+</div>
+
+<div id="what">
+    <h3>what is it?</h3>
+
+    <p>The Groovy Koans project is a collection of small exercises in the form of unit tests,
+        designed to get Java developers up to speed on Groovy features and common idioms. It starts by teaching you
+        basic Groovy building blocks, and gradually builds your knowledge towards metaprogramming, slurpers, and all
+        the goodness Groovy has to offer.
+    </p>
+</div>
+
+<div>
+    <h3>get started</h3>
+
+    <p>Each Koan is a broken unit test that needs fixing. Don't worry - every test is documented and linked to
+        the resources you need. When you have completed all of your Koans, you should feel very comfortable with
+        Groovy and should easily be able to continue your learning path with <a href="http://grails.org">Grails</a>
+        and/or <a href="http://gradle.org">Gradle</a>.
+    </p>
+
+    <div id="download">
+        <h4>Download Groovy Koans</h4>
+
+        <br/>
+        <br/>
+        <i class="icon-download"></i>&nbsp;&nbsp;<a href="#">v0.1</a> (300kb)
+    </div>
+
+    <div id="instructions">
+        Okay - we've done enough talking. Let's start coding!
+        <br/><br/>
+        <ul>
+            <li>Make sure you have
+                <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank">
+                JDK 1.6+</a> installed</li>
+            <li>Download the Koans package and unzip</li>
+            <li><a href="#" rel="popover" data-title="Screenshot" data-content="<img src='img/removeSolutions.png'/>'">
+                Remove</a> the solutions</li>
+            <li>Execute <a href="#" rel="popover" data-title="Screenshot" data-content="<img src='img/koan01.png'/>'">
+                Koan01</a>... and fail</li>
+            <li>Fix code, and execute again</li>
+            <li>Keep going until you're fluent at Groovy :)</li>
+        </ul>
+    </div>
+</div>
+
+<div>
+    <h3>author</h3>
+
+    <p>I'd be happy to receive corrections, suggestions, pull-requests, or vi4gra ads... but keep in mind that this
+        is still work in progress.
+    </p>
+
+    <strong><a href="http://twitter.com/nadavc">@nadavc</a></strong>
+    <br/>
+    <a href="http://github.com/nadavc">http://github.com/nadavc</a>
+</div>
+
+<div>
+    <h3>credits</h3>
+
+    <p>The Koan concept started way back in <a href="http://en.wikipedia.org/wiki/K%C5%8Dan">Zen</a> practice.
+        It was then adapted by the good folks of <a href="http://rubykoans.com">rubykoans.com</a> and perfected by
+        <a href="https://github.com/jimwebber/neo4j-tutorial">Neo4j</a>. Thanks to everyone!
+
+    </p>
+</div>
+
+
+<script src="js/bootstrap.min.js"></script>
+</body>
