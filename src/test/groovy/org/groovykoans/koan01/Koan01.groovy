@@ -116,8 +116,8 @@ class Koan01 extends GroovyTestCase {
         // Using your newly acquired knowledge, fix the createMessageForUser method below
         // so that anonymous users get 'Hello Anonymous!' and logged in users get 'Hello <first name>'
         // You should use userService.getLoggedInUser() as well.
-        assertEquals(createMessageForUser(userServiceWithUserLoggedIn), 'Hello Ronaldo!')
-        assertEquals(createMessageForUser(userServiceWithoutLoggedInUser), 'Hello Anonymous!')
+        assertEquals('Hello Ronaldo!', createMessageForUser(userServiceWithUserLoggedIn))
+        assertEquals('Hello Anonymous!', createMessageForUser(userServiceWithoutLoggedInUser))
     }
 
     private String createMessageForUser(UserService userService) {
