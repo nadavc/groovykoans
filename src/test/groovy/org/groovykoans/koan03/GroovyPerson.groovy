@@ -14,7 +14,7 @@
  *  limitations under the License.
  */
  
- package org.groovykoans.koan03
+package org.groovykoans.koan03
 
 /**
  * A simple GroovyBean representing a person.

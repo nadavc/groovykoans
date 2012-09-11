@@ -14,7 +14,7 @@
  *  limitations under the License.
  */
  
- package org.groovykoans.koan04
+package org.groovykoans.koan04
 
 /**
  * Koan04 - Closures

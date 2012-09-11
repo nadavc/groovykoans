@@ -14,7 +14,7 @@
  *  limitations under the License.
  */
  
- package org.groovykoans.koan05
+package org.groovykoans.koan05
 
 /**
  * Koan05 - Iterations in Groovy

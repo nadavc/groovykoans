@@ -14,7 +14,7 @@
  *  limitations under the License.
  */
  
- package org.groovykoans.koan06
+package org.groovykoans.koan06
 
 /**
  * Koan06 - More closures

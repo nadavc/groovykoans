@@ -14,7 +14,7 @@
  *  limitations under the License.
  */
  
- package org.groovykoans.koan07
+package org.groovykoans.koan07
 
 import java.util.regex.Pattern
 import java.util.regex.Matcher

@@ -14,7 +14,7 @@
  *  limitations under the License.
  */
  
- package org.groovykoans.koan09
+package org.groovykoans.koan09
 
 import org.codehaus.groovy.runtime.InvokerHelper
 

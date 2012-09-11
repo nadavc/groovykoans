@@ -14,7 +14,7 @@
  *  limitations under the License.
  */
  
- package org.groovykoans.koan02
+package org.groovykoans.koan02
 
 /**
  * Koan02 - Groovy Truth

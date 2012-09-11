@@ -14,7 +14,7 @@
  *  limitations under the License.
  */
  
- package org.groovykoans.koan08
+package org.groovykoans.koan08
 
 /**
  * Koan08 - More goodness

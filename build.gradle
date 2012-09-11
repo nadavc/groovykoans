@@ -14,7 +14,7 @@
  *  limitations under the License.
  */
  
- import java.awt.Desktop
+import java.awt.Desktop
 
 apply plugin: 'groovy'
 apply plugin: 'idea'

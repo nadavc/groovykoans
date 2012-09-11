@@ -14,7 +14,7 @@
  *  limitations under the License.
  */
  
- package org.groovykoans.koan03
+package org.groovykoans.koan03
 
 /**
  * Koan03 - GroovyBeans and classes

@@ -14,7 +14,7 @@
  *  limitations under the License.
  */
  
- package org.groovykoans.koan09
+package org.groovykoans.koan09
 
 /**
  * Koan09 - Meta-programming (Meta Object Protocol)

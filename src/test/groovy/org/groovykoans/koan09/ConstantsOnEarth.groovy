@@ -14,7 +14,7 @@
  *  limitations under the License.
  */
  
- package org.groovykoans.koan09
+package org.groovykoans.koan09
 
 class ConstantsOnEarth {
     def gravity = 1

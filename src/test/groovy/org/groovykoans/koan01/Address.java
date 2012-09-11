@@ -14,7 +14,7 @@
  *  limitations under the License.
  */
  
- package org.groovykoans.koan01;
+package org.groovykoans.koan01;
 
 public class Address {
 
