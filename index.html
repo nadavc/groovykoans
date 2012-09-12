@@ -9,6 +9,9 @@
                 trigger: 'hover',
                 html: true
             });
+            $("[rel='tooltip']").tooltip({
+                placement: 'bottom'
+            });
         });
 
     </script>
@@ -43,6 +46,12 @@
             -webkit-border-radius: 6px;
             -moz-border-radius: 6px;
         }
+
+        #dlDetails {
+            margin-top: 25px;
+            font-size: small;
+        }
+
         .popover {
             width: auto;
         }
@@ -91,11 +100,15 @@
     </p>
 
     <div id="download">
-        <h4>Download Groovy Koans</h4>
+        <h4>Groovy Koans v0.1</h4>
 
         <br/>
-        <br/>
-        <i class="icon-download"></i>&nbsp;&nbsp;<a href="https://github.com/nadavc/groovykoans/zipball/master">v0.1</a> (280kb)
+        <a class="btn btn-primary btn-large" href="https://github.com/nadavc/groovykoans/zipball/master">Download &raquo;</a>
+
+        <div id="dlDetails">
+            <a href="#" rel="tooltip" title="Initial Release">what's new?</a> |
+            <a href="#" rel="tooltip" title="2012/09/12">release date</a>
+        </div>
     </div>
 
     <div id="instructions">
