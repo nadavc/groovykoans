@@ -24,6 +24,7 @@ package org.groovykoans.koan09
  *   * http://mrhaki.blogspot.com/2009/11/groovy-goodness-intercept-methods-with.html
  *   * http://groovy.codehaus.org/Closures#Closures-thisowneranddelegate
  *   * http://stackoverflow.com/questions/8120949/what-does-delegate-mean-in-groovy/8121750#8121750
+ *   * http://groovy.codehaus.org/Using+invokeMethod+and+getProperty
  *   * http://mrhaki.blogspot.com/2009/12/groovy-goodness-adding-or-overriding.html
  *   * http://www.codinghorror.com/blog/2007/02/why-cant-programmers-program.html,
  *
@@ -37,9 +38,9 @@ class Koan09 extends GroovyTestCase {
 
         // Create an Expando class and dynamically create a 'firstName' property set with some value. Also
         // add a sayHello() method that returns "Hello from ${firstName}"
-        def expando
+        def expando = new Expando()
         // ------------ START EDITING HERE ----------------------
-        expando = new Expando(firstName: 'Frank')
+        expando.firstName = 'Frank'
         expando.sayHello = {->
             "Hello from ${firstName}"
         }
@@ -65,9 +66,9 @@ class Koan09 extends GroovyTestCase {
         proxy.use {
             def sensitiveService = new SensitiveService()
             sensitiveService.nukeCity('jojo', 'Hogsmeade')
-            assertEquals(sensitiveService.numberOfNukes, 0)
+            assertEquals(0, sensitiveService.numberOfNukes)
             sensitiveService.nukeCity('admin', 'Hogsmeade')
-            assertEquals(sensitiveService.numberOfNukes, 1)
+            assertEquals(1, sensitiveService.numberOfNukes)
         }
 
     }
@@ -77,11 +78,11 @@ class Koan09 extends GroovyTestCase {
         // Some reading is available here: http://groovy.codehaus.org/Closures#Closures-thisowneranddelegate
 
         // In Java, we only have the 'this' keyword. It returns the current instance. Groovy does exactly the same.
-        def whatIsThisEqual
+        def expectedThisClassName
         // ------------ START EDITING HERE ----------------------
-        whatIsThisEqual = 'org.groovykoans.koan09.Koan09'
+        expectedThisClassName = 'org.groovykoans.koan09.Koan09'
         // ------------ STOP EDITING HERE  ----------------------
-        assertEquals(this.class.name, whatIsThisEqual)
+        assertEquals(expectedThisClassName, this.class.name)
 
         def outerClosure = {->
             println 'hello from first closure'
@@ -91,13 +92,13 @@ class Koan09 extends GroovyTestCase {
         }
         // The owner is the same thing as 'this'. Unless you are surrounded by a Closure, in which case the Closure is
         // your owner.
-        def firstClosureOwner, secondClosureOwner
+        def expectedOuterClosureOwnerClassName, expectedInnerClosureOwnerClassName
         // ------------ START EDITING HERE ----------------------
-        firstClosureOwner = 'org.groovykoans.koan09.Koan09'
-        secondClosureOwner = 'org.groovykoans.koan09.Koan09$_test03_ThisDelegateAndOwner_closure3'
+        expectedOuterClosureOwnerClassName = 'org.groovykoans.koan09.Koan09'
+        expectedInnerClosureOwnerClassName = 'org.groovykoans.koan09.Koan09$_test03_ThisDelegateAndOwner_closure3'
         // ------------ STOP EDITING HERE  ----------------------
-        assertEquals(outerClosure.owner.class.name, firstClosureOwner)
-        assertEquals(outerClosure().owner.class.name, secondClosureOwner)
+        assertEquals(expectedOuterClosureOwnerClassName, outerClosure.owner.class.name)
+        assertEquals(expectedInnerClosureOwnerClassName, outerClosure().owner.class.name)
 
         // And finally, delegate is the same as owner, only that it can be modified by an external script.
         // Changing the delegate allows you to change the 'context' in which the closure is run. It may
@@ -119,16 +120,16 @@ class Koan09 extends GroovyTestCase {
         def weightOnEarth = calculateWeight(10)
 
         // Can you figure out what the values for weightOnEarth and weightOnMoon are?
-        def weightOnMoonResult, weightOnEarthResult
+        def expectedWeightOnMoon, expectedWeightOnEarth
         // ------------ START EDITING HERE ----------------------
-        weightOnMoonResult = 1.655
-        weightOnEarthResult = 10
+        expectedWeightOnMoon = 1.655
+        expectedWeightOnEarth = 10
         // ------------ STOP EDITING HERE  ----------------------
-        assertEquals(weightOnEarth, weightOnEarthResult)
-        assertEquals(weightOnMoon, weightOnMoonResult)
+        assertEquals(expectedWeightOnEarth, weightOnEarth)
+        assertEquals(expectedWeightOnMoon, weightOnMoon)
 
         // Now check out this Stackoverflow answer:
-        //
+        // http://stackoverflow.com/questions/8120949/what-does-delegate-mean-in-groovy/8121750#8121750
         // Create a fake environment using the technique in the link to create a gravity of 6
         // ------------ START EDITING HERE ----------------------
         calculateWeight.delegate = [gravity: 6]
@@ -193,9 +194,9 @@ class Koan09 extends GroovyTestCase {
         }
         // ------------ STOP EDITING HERE  ----------------------
         def fizzBuzzes = (1..15).collect { it.fizzBuzz() }
-        def correctResult = ['1', '2', 'Fizz', '4', 'Buzz', 'Fizz', '7', '8', 'Fizz',
+        def expectedFizzBuzzes = ['1', '2', 'Fizz', '4', 'Buzz', 'Fizz', '7', '8', 'Fizz',
                 'Buzz', '11', 'Fizz', '13', '14', 'FizzBuzz']
-        assertEquals(correctResult, fizzBuzzes)
+        assertEquals(expectedFizzBuzzes, fizzBuzzes)
     }
 
 }

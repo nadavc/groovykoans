@@ -62,14 +62,14 @@ class Koan05 extends GroovyTestCase {
         // Read at http://groovy.codehaus.org/Collections#Collections-Ranges
 
         // A simple example:
-        def fiveTo10WithRange = 5..10
+        def range = 5..10
 
         // What will fiveTo10WithRange equal?
-        def rangeResult = []
+        def expectedRange = []
         // ------------ START EDITING HERE ----------------------
-        rangeResult = [5, 6, 7, 8, 9, 10]
+        expectedRange = [5, 6, 7, 8, 9, 10]
         // ------------ STOP EDITING HERE  ----------------------
-        assertEquals(fiveTo10WithRange, rangeResult)
+        assertEquals(expectedRange, range)
     }
 
     void test03_IterateOnRanges() {

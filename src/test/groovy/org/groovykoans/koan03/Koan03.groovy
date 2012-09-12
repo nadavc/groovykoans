@@ -81,7 +81,7 @@ class Koan03 extends GroovyTestCase {
         transaction = new SimpleGroovyBean(title: 'Transaction', data: -30)
         // ------------ STOP EDITING HERE  ----------------------
 
-        assertEquals(transaction.data, -30)
+        assertEquals(-30, transaction.data)
     }
 
     void test04_DefaultValues() {
@@ -91,7 +91,7 @@ class Koan03 extends GroovyTestCase {
         // Once you've learned how to use default values, modify the NameWithDefaultValue
         // class to set name to 'Anonymous' if no name has been specified.
         def nameObject = new NameWithDefaultValue()
-        assertEquals(nameObject.name, 'Anonymous')
+        assertEquals('Anonymous', nameObject.name)
     }
 
 }

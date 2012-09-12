@@ -51,8 +51,8 @@ class Koan08 extends GroovyTestCase {
             result
             // ------------ STOP EDITING HERE  ----------------------
         }
-        [5: 2.5, 'smile': 'smile', 'smilee': 'smiley', 'heehee': 'heehey'].each { key, value ->
-            assertEquals(magicClosure(key), value)
+        [5: 2.5, 'smile': 'smile', 'smilee': 'smiley', 'heehee': 'heehey'].each { key, expectedValue ->
+            assertEquals(expectedValue, magicClosure(key))
         }
 
     }

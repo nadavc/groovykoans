@@ -52,14 +52,14 @@ class Koan04 extends GroovyTestCase {
 
         // Closures can also accept parameters, like so
         def personalizedHelloClosure = { String name -> return "Hello $name" }
-        def helloRonalda = personalizedHelloClosure('Ronalda')
+        String helloRonalda = personalizedHelloClosure('Ronalda')
 
         // What is the result from the above execution?
-        def helloRonaldaResult
+        String expectedHelloRonalda
         // ------------ START EDITING HERE ----------------------
-        helloRonaldaResult = 'Hello Ronalda'
+        expectedHelloRonalda = 'Hello Ronalda'
         // ------------ STOP EDITING HERE  ----------------------
-        assertEquals(helloRonalda, helloRonaldaResult)
+        assertEquals(expectedHelloRonalda, helloRonalda)
 
         // But there's a shorthand version for this. One parameter closures implicitly add a variable named 'it'
         // which represents that single parameter. We also learned that 'return' isn't mandatory in functions if
@@ -68,11 +68,11 @@ class Koan04 extends GroovyTestCase {
         String happyBirthdayGranger = happyBirthdayClosure('Hermione')
 
         // What is the result from the above execution?
-        def happyBirthdayGrangerResult
+        def expectedHappyBirthdayGranger
         // ------------ START EDITING HERE ----------------------
-        happyBirthdayGrangerResult = 'Happy Birthday To Hermione'
+        expectedHappyBirthdayGranger = 'Happy Birthday To Hermione'
         // ------------ STOP EDITING HERE  ----------------------
-        assertEquals(happyBirthdayGrangerResult, happyBirthdayGranger)
+        assertEquals(expectedHappyBirthdayGranger, happyBirthdayGranger)
 
         // Create a closure that accepts two integers, adds them, and multiplies the result by two
         def resultClosure
@@ -80,7 +80,7 @@ class Koan04 extends GroovyTestCase {
         resultClosure = { int a, int b -> (a + b) * 2 }
         // ------------ STOP EDITING HERE  ----------------------
 
-        assertEquals(resultClosure(2, 3), 10)
+        assertEquals(10, resultClosure(2, 3))
         shouldFail {
             resultClosure('one', 'two')
         }
@@ -122,11 +122,11 @@ class Koan04 extends GroovyTestCase {
         }
 
         // What will monkeyColors contain?
-        def monkeyColorResult = []
+        def expectedMonkeyColors = []
         // ------------ START EDITING HERE ----------------------
-        monkeyColorResult = ['blue', 'red', 'purple']
+        expectedMonkeyColors = ['blue', 'red', 'purple']
         // ------------ STOP EDITING HERE  ----------------------
-        assertEquals(monkeyColorResult, monkeyColors)
+        assertEquals(expectedMonkeyColors, monkeyColors)
 
         // Okay. Time for an exercise. Have a look at Groovy's additions on top of the File class by reading
         // docs at http://groovy.codehaus.org/groovy-jdk/java/io/File.html
@@ -153,12 +153,12 @@ class Koan04 extends GroovyTestCase {
 
         // Can you guess what count() does? If not, look it up in
         // http://groovy.codehaus.org/groovy-jdk/java/lang/String.html
-        def countResult
+        def expectedCount
         // ------------ START EDITING HERE ----------------------
-        countResult = 3
+        expectedCount = 3
         // ------------ STOP EDITING HERE  ----------------------
 
-        assertEquals(countResult, count)
+        assertEquals(expectedCount, count)
 
         // Admittedly, that past example doesn't make the code any clearer.
         // However, when we have methods with a closure as a parameter, it removes a lot of the noise:
@@ -167,11 +167,11 @@ class Koan04 extends GroovyTestCase {
         }
 
         // What will the value of mysteryList be?
-        def mysteryListResult
+        def expectedMysteryList
         // ------------ START EDITING HERE ----------------------
-        mysteryListResult = ['Baby', 'Yeah']
+        expectedMysteryList = ['Baby', 'Yeah']
         // ------------ STOP EDITING HERE  ----------------------
-        assertEquals(mysteryListResult, mysteryList)
+        assertEquals(expectedMysteryList, mysteryList)
 
     }
 
