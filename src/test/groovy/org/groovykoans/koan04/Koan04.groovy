@@ -41,14 +41,14 @@ class Koan04 extends GroovyTestCase {
         def sayHelloClosure = { return 'Hello from Closure' }
 
         // We can then execute it as if it were a regular method, using:
-        def helloFromClosure = sayHelloClosure()
+        def helloClosureResult = sayHelloClosure()
 
         // What is the result from the above execution?
-        def helloFromClosureResult
+        def expectedHelloClosureResult
         // ------------ START EDITING HERE ----------------------
-        helloFromClosureResult = 'Hello from Closure'
+        expectedHelloClosureResult = 'Hello from Closure'
         // ------------ STOP EDITING HERE  ----------------------
-        assertEquals(helloFromClosure, helloFromClosureResult)
+        assertEquals(expectedHelloClosureResult, helloClosureResult)
 
         // Closures can also accept parameters, like so
         def personalizedHelloClosure = { String name -> return "Hello $name" }

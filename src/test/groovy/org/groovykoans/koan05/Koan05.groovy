@@ -64,7 +64,7 @@ class Koan05 extends GroovyTestCase {
         // A simple example:
         def range = 5..10
 
-        // What will fiveTo10WithRange equal?
+        // What will range equal?
         def expectedRange = []
         // ------------ START EDITING HERE ----------------------
         expectedRange = [5, 6, 7, 8, 9, 10]
