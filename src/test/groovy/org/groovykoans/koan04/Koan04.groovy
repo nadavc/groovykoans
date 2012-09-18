@@ -41,25 +41,25 @@ class Koan04 extends GroovyTestCase {
         def sayHelloClosure = { return 'Hello from Closure' }
 
         // We can then execute it as if it were a regular method, using:
-        def helloClosureResult = sayHelloClosure()
+        def helloFromClosure = sayHelloClosure()
 
         // What is the result from the above execution?
-        def expectedHelloClosureResult
+        def helloFromClosureResult
         // ------------ START EDITING HERE ----------------------
-        expectedHelloClosureResult = 'Hello from Closure'
+        helloFromClosureResult = 'Hello from Closure'
         // ------------ STOP EDITING HERE  ----------------------
-        assertEquals(expectedHelloClosureResult, helloClosureResult)
+        assertEquals(helloFromClosure, helloFromClosureResult)
 
         // Closures can also accept parameters, like so
         def personalizedHelloClosure = { String name -> return "Hello $name" }
-        String helloRonalda = personalizedHelloClosure('Ronalda')
+        def helloRonalda = personalizedHelloClosure('Ronalda')
 
         // What is the result from the above execution?
-        String expectedHelloRonalda
+        def helloRonaldaResult
         // ------------ START EDITING HERE ----------------------
-        expectedHelloRonalda = 'Hello Ronalda'
+        helloRonaldaResult = 'Hello Ronalda'
         // ------------ STOP EDITING HERE  ----------------------
-        assertEquals(expectedHelloRonalda, helloRonalda)
+        assertEquals(helloRonalda, helloRonaldaResult)
 
         // But there's a shorthand version for this. One parameter closures implicitly add a variable named 'it'
         // which represents that single parameter. We also learned that 'return' isn't mandatory in functions if
@@ -68,11 +68,11 @@ class Koan04 extends GroovyTestCase {
         String happyBirthdayGranger = happyBirthdayClosure('Hermione')
 
         // What is the result from the above execution?
-        def expectedHappyBirthdayGranger
+        def happyBirthdayGrangerResult
         // ------------ START EDITING HERE ----------------------
-        expectedHappyBirthdayGranger = 'Happy Birthday To Hermione'
+        happyBirthdayGrangerResult = 'Happy Birthday To Hermione'
         // ------------ STOP EDITING HERE  ----------------------
-        assertEquals(expectedHappyBirthdayGranger, happyBirthdayGranger)
+        assertEquals(happyBirthdayGranger, happyBirthdayGrangerResult)
 
         // Create a closure that accepts two integers, adds them, and multiplies the result by two
         def resultClosure
@@ -122,11 +122,11 @@ class Koan04 extends GroovyTestCase {
         }
 
         // What will monkeyColors contain?
-        def expectedMonkeyColors = []
+        def monkeyColorResult = []
         // ------------ START EDITING HERE ----------------------
-        expectedMonkeyColors = ['blue', 'red', 'purple']
+        monkeyColorResult = ['blue', 'red', 'purple']
         // ------------ STOP EDITING HERE  ----------------------
-        assertEquals(expectedMonkeyColors, monkeyColors)
+        assertEquals(monkeyColors, monkeyColorResult)
 
         // Okay. Time for an exercise. Have a look at Groovy's additions on top of the File class by reading
         // docs at http://groovy.codehaus.org/groovy-jdk/java/io/File.html
@@ -153,12 +153,12 @@ class Koan04 extends GroovyTestCase {
 
         // Can you guess what count() does? If not, look it up in
         // http://groovy.codehaus.org/groovy-jdk/java/lang/String.html
-        def expectedCount
+        def countResult
         // ------------ START EDITING HERE ----------------------
-        expectedCount = 3
+        countResult = 3
         // ------------ STOP EDITING HERE  ----------------------
 
-        assertEquals(expectedCount, count)
+        assertEquals(count, countResult)
 
         // Admittedly, that past example doesn't make the code any clearer.
         // However, when we have methods with a closure as a parameter, it removes a lot of the noise:
@@ -167,11 +167,11 @@ class Koan04 extends GroovyTestCase {
         }
 
         // What will the value of mysteryList be?
-        def expectedMysteryList
+        def mysteryListResult
         // ------------ START EDITING HERE ----------------------
-        expectedMysteryList = ['Baby', 'Yeah']
+        mysteryListResult = ['Baby', 'Yeah']
         // ------------ STOP EDITING HERE  ----------------------
-        assertEquals(expectedMysteryList, mysteryList)
+        assertEquals(mysteryList, mysteryListResult)
 
     }
 

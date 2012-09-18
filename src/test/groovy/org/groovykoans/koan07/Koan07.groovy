@@ -192,7 +192,7 @@ and can become difficult to maintain"""
         def sum = text.findAll(regexp) { it[3].toInteger() }.sum()
         // ^^ This is even more concise that the previous example! Choose the one you feel most comfortable with.
 
-        assertEquals(sum, 1015)
+        assertEquals(1015, sum)
         def options = regexp.find(/\(\?[^\)]*\)/)
         assertTrue('A commented regex must use the x flag', options.contains('x'))
         assertTrue('Comments can be inserted using the # character', regexp.contains('#'))
