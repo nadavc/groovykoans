@@ -56,7 +56,7 @@ class Koan04 extends GroovyTestCase {
         // ------------ START EDITING HERE ----------------------
         happyBirthdayGrangerResult = 'Happy Birthday To Hermione'
         // ------------ STOP EDITING HERE  ----------------------
-        assertEquals(happyBirthdayGrangerResult, happyBirthdayGranger)
+        assertEquals(happyBirthdayGranger, happyBirthdayGrangerResult)
 
         // Create a closure that accepts two integers, adds them, and multiplies the result by two
         def resultClosure
@@ -64,7 +64,7 @@ class Koan04 extends GroovyTestCase {
         resultClosure = { int a, int b -> (a + b) * 2 }
         // ------------ STOP EDITING HERE  ----------------------
 
-        assertEquals(resultClosure(2, 3), 10)
+        assertEquals(10, resultClosure(2, 3))
         shouldFail {
             resultClosure('one', 'two')
         }
@@ -110,7 +110,7 @@ class Koan04 extends GroovyTestCase {
         // ------------ START EDITING HERE ----------------------
         monkeyColorResult = ['blue', 'red', 'purple']
         // ------------ STOP EDITING HERE  ----------------------
-        assertEquals(monkeyColorResult, monkeyColors)
+        assertEquals(monkeyColors, monkeyColorResult)
 
         // Okay. Time for an exercise. Have a look at Groovy's additions on top of the File class by reading
         // docs at http://groovy.codehaus.org/groovy-jdk/java/io/File.html
@@ -142,7 +142,7 @@ class Koan04 extends GroovyTestCase {
         countResult = 3
         // ------------ STOP EDITING HERE  ----------------------
 
-        assertEquals(countResult, count)
+        assertEquals(count, countResult)
 
         // Admittedly, that past example doesn't make the code any clearer.
         // However, when we have methods with a closure as a parameter, it removes a lot of the noise:
@@ -155,7 +155,7 @@ class Koan04 extends GroovyTestCase {
         // ------------ START EDITING HERE ----------------------
         mysteryListResult = ['Baby', 'Yeah']
         // ------------ STOP EDITING HERE  ----------------------
-        assertEquals(mysteryListResult, mysteryList)
+        assertEquals(mysteryList, mysteryListResult)
 
     }
 
