@@ -30,6 +30,15 @@ To allow gradlew to work through your proxy, simply add the following parameters
 $ ./gradlew koan01 -Dhttp.proxyHost=[http proxy] -Dhttp.proxyPort=[http proxy port]
 ```
 
+#### The answers are already there! What's the point?  ####
+
+One of the perks of learning through Koans is that once your Koan is solved, you can compare your solution with
+the 'official' solution and perhaps learn from that comparison as well. It is also a way to make sure that the Koans
+are indeed solvable by filling in the blanks.
+
+For optimal learning experience, however, you should first try to solve the Koans without those solutions as reference.
+To remove the solutions, run `$ ./gradlew removeSolutions` from the root of your unzipped Koans.
+
 #### Are there more Koans planned? How will I know? ####
 
 These are the Koans that are currently planned: 
@@ -50,7 +59,6 @@ The Koan concept started way back in [Zen][zen] practice. It was then adapted by
 Please feel free to leave comments and pull requests :)
 
 Enjoy!
-Nadav
 
 [jdk]: http://www.oracle.com/technetwork/java/javase/downloads/index.html
 [groovykoans]: http://groovykoans.org
