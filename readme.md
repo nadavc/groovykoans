@@ -57,7 +57,6 @@ Nadav
 [ideac]: http://www.jetbrains.com/idea/download/
 [twitter]: http://twitter.com/nadavc
 [github]: http://github.com/nadavc
-[urbancat]: http://urbancat.org
 [zen]: http://en.wikipedia.org/wiki/K%C5%8Dan
 [rubykoans]: http://rubykoans.org
 [neo4j]: https://github.com/jimwebber/neo4j-tutorial

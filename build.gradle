@@ -60,7 +60,7 @@ tasks.addRule('Pattern: koan<Number>: Runs a single Koan') { String taskName ->
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '1.1'
+    gradleVersion = '1.2'
 }
 
 
