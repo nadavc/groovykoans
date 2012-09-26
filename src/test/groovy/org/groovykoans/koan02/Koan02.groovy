@@ -33,8 +33,8 @@ class Koan02 extends GroovyTestCase {
         predicate2 = false
         // ------------ STOP EDITING HERE  ----------------------
 
-        assertTrue(predicate1)
-        assertFalse(predicate2)
+        assert predicate1
+        assert predicate2 == false
     }
 
     void test02_Collections() {
@@ -47,8 +47,8 @@ class Koan02 extends GroovyTestCase {
         list.clear()
         // ------------ STOP EDITING HERE  ----------------------
 
-        assertTrue(map.asBoolean())
-        assertFalse(list.asBoolean())
+        assert map.asBoolean()
+        assert list.asBoolean() == false
     }
 
     void test03_StringTruth() {
@@ -65,7 +65,7 @@ class Koan02 extends GroovyTestCase {
         if (s1) {
             fail()
         }
-        assertTrue(s2.asBoolean())
+        assert s2.asBoolean()
     }
 
     void test04_NumericTruth() {
@@ -84,7 +84,7 @@ class Koan02 extends GroovyTestCase {
         for (int i : balance) {
             result = result && i.asBoolean()
         }
-        assertTrue(result)
+        assert result
     }
 
 }

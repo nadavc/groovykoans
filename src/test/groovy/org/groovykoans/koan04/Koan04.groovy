@@ -48,7 +48,7 @@ class Koan04 extends GroovyTestCase {
         // ------------ START EDITING HERE ----------------------
         expectedHelloClosureResult = 'Hello from Closure'
         // ------------ STOP EDITING HERE  ----------------------
-        assertEquals(expectedHelloClosureResult, helloClosureResult)
+        assert helloClosureResult == expectedHelloClosureResult
 
         // Closures can also accept parameters, like so
         def personalizedHelloClosure = { String name -> return "Hello $name" }
@@ -59,7 +59,7 @@ class Koan04 extends GroovyTestCase {
         // ------------ START EDITING HERE ----------------------
         expectedHelloRonalda = 'Hello Ronalda'
         // ------------ STOP EDITING HERE  ----------------------
-        assertEquals(expectedHelloRonalda, helloRonalda)
+        assert helloRonalda == expectedHelloRonalda
 
         // But there's a shorthand version for this. One parameter closures implicitly add a variable named 'it'
         // which represents that single parameter. We also learned that 'return' isn't mandatory in functions if
@@ -72,7 +72,7 @@ class Koan04 extends GroovyTestCase {
         // ------------ START EDITING HERE ----------------------
         expectedHappyBirthdayGranger = 'Happy Birthday To Hermione'
         // ------------ STOP EDITING HERE  ----------------------
-        assertEquals(expectedHappyBirthdayGranger, happyBirthdayGranger)
+        assert happyBirthdayGranger == expectedHappyBirthdayGranger
 
         // Create a closure that accepts two integers, adds them, and multiplies the result by two
         def resultClosure
@@ -80,7 +80,7 @@ class Koan04 extends GroovyTestCase {
         resultClosure = { int a, int b -> (a + b) * 2 }
         // ------------ STOP EDITING HERE  ----------------------
 
-        assertEquals(10, resultClosure(2, 3))
+        assert resultClosure(2, 3) == 10
         shouldFail {
             resultClosure('one', 'two')
         }
@@ -109,7 +109,7 @@ class Koan04 extends GroovyTestCase {
 
         // Let's check that we got the same result (you can use the assertX methods)
         // ------------ START EDITING HERE ----------------------
-        assertEquals(groovyResult, javaResult)
+        assert javaResult == groovyResult
         // ------------ STOP EDITING HERE  ----------------------
 
         // To make the code even cleaner, Groovy allows some syntactic sugar. If your method has a closure as its
@@ -126,7 +126,7 @@ class Koan04 extends GroovyTestCase {
         // ------------ START EDITING HERE ----------------------
         expectedMonkeyColors = ['blue', 'red', 'purple']
         // ------------ STOP EDITING HERE  ----------------------
-        assertEquals(expectedMonkeyColors, monkeyColors)
+        assert monkeyColors == expectedMonkeyColors
 
         // Okay. Time for an exercise. Have a look at Groovy's additions on top of the File class by reading
         // docs at http://groovy.codehaus.org/groovy-jdk/java/io/File.html
@@ -158,7 +158,7 @@ class Koan04 extends GroovyTestCase {
         expectedCount = 3
         // ------------ STOP EDITING HERE  ----------------------
 
-        assertEquals(expectedCount, count)
+        assert count == expectedCount
 
         // Admittedly, that past example doesn't make the code any clearer.
         // However, when we have methods with a closure as a parameter, it removes a lot of the noise:
@@ -171,7 +171,7 @@ class Koan04 extends GroovyTestCase {
         // ------------ START EDITING HERE ----------------------
         expectedMysteryList = ['Baby', 'Yeah']
         // ------------ STOP EDITING HERE  ----------------------
-        assertEquals(expectedMysteryList, mysteryList)
+        assert mysteryList == expectedMysteryList
 
     }
 

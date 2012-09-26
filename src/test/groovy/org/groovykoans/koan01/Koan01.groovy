@@ -46,8 +46,8 @@ class Koan01 extends GroovyTestCase {
         assertion = true
         // ------------ STOP EDITING HERE  ----------------------
 
-        assertTrue('Assign "true" to the "assertion" variable to proceed', assertion)
-        assertEquals('Modify "Hola" to "Hello" to proceed', "Hello", hello)
+        assert assertion, 'Assign "true" to the "assertion" variable to proceed'
+        assert hello == "Hello", 'Modify "Hola" to "Hello" to proceed'
     }
 
 
@@ -67,7 +67,7 @@ class Koan01 extends GroovyTestCase {
         result = "The size of the string '${greeting}' is ${greeting.size()}"
         // ------------ STOP EDITING HERE  ----------------------
 
-        assertEquals("The size of the string 'Hello George, how are you?' is 26", result)
+        assert result == "The size of the string 'Hello George, how are you?' is 26"
     }
 
     void test03_MapsInGroovy() {
@@ -81,7 +81,7 @@ class Koan01 extends GroovyTestCase {
         result = map['right'] + map['left']
         // ------------ STOP EDITING HERE  ----------------------
 
-        assertLength(16, result.toCharArray())
+        assert result.toCharArray().size() == 16
     }
 
     void test04_Lists() {
@@ -103,7 +103,7 @@ class Koan01 extends GroovyTestCase {
         // ------------ STOP EDITING HERE  ----------------------
 
         // Note how Groovy allows you to compare the *content* of the lists
-        assertEquals(javaList, groovyList)
+        assert groovyList == javaList
     }
 
     void test05_ElvisAndSafeNavigation() {
@@ -132,8 +132,8 @@ class Koan01 extends GroovyTestCase {
         // Using your newly acquired knowledge, fix the createMessageForUser method below
         // so that anonymous users get 'Hello Anonymous!' and logged in users get 'Hello <first name>'
         // You should use userService.getLoggedInUser() as well.
-        assertEquals('Hello Ronaldo!', createMessageForUser(userServiceWithUserLoggedIn))
-        assertEquals('Hello Anonymous!', createMessageForUser(userServiceWithoutLoggedInUser))
+        assert createMessageForUser(userServiceWithUserLoggedIn) == 'Hello Ronaldo!'
+        assert createMessageForUser(userServiceWithoutLoggedInUser) == 'Hello Anonymous!'
     }
 
     private String createMessageForUser(UserService userService) {
@@ -147,4 +147,3 @@ class Koan01 extends GroovyTestCase {
     }
 
 }
-

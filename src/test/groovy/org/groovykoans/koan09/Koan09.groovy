@@ -46,8 +46,8 @@ class Koan09 extends GroovyTestCase {
         }
         // ------------ STOP EDITING HERE  ----------------------
 
-        assertNotNull('firstName property was not found', expando?.firstName)
-        assertEquals("Hello from ${expando.firstName}", expando.sayHello())
+        assert expando?.firstName != null, 'firstName property was not found'
+        assert expando.sayHello() == "Hello from ${expando.firstName}"
     }
 
     void test02_GroovyInterceptors() {
@@ -66,9 +66,9 @@ class Koan09 extends GroovyTestCase {
         proxy.use {
             def sensitiveService = new SensitiveService()
             sensitiveService.nukeCity('jojo', 'Hogsmeade')
-            assertEquals(0, sensitiveService.numberOfNukes)
+            assert sensitiveService.numberOfNukes == 0
             sensitiveService.nukeCity('admin', 'Hogsmeade')
-            assertEquals(1, sensitiveService.numberOfNukes)
+            assert sensitiveService.numberOfNukes == 1
         }
 
     }
@@ -82,7 +82,7 @@ class Koan09 extends GroovyTestCase {
         // ------------ START EDITING HERE ----------------------
         expectedThisClassName = 'org.groovykoans.koan09.Koan09'
         // ------------ STOP EDITING HERE  ----------------------
-        assertEquals(expectedThisClassName, this.class.name)
+        assert this.class.name == expectedThisClassName
 
         def outerClosure = {->
             println 'hello from first closure'
@@ -97,8 +97,8 @@ class Koan09 extends GroovyTestCase {
         expectedOuterClosureOwnerClassName = 'org.groovykoans.koan09.Koan09'
         expectedInnerClosureOwnerClassName = 'org.groovykoans.koan09.Koan09$_test03_ThisDelegateAndOwner_closure3'
         // ------------ STOP EDITING HERE  ----------------------
-        assertEquals(expectedOuterClosureOwnerClassName, outerClosure.owner.class.name)
-        assertEquals(expectedInnerClosureOwnerClassName, outerClosure().owner.class.name)
+        assert outerClosure.owner.class.name == expectedOuterClosureOwnerClassName
+        assert outerClosure().owner.class.name == expectedInnerClosureOwnerClassName
 
         // And finally, delegate is the same as owner, only that it can be modified by an external script.
         // Changing the delegate allows you to change the 'context' in which the closure is run. It may
@@ -125,8 +125,8 @@ class Koan09 extends GroovyTestCase {
         expectedWeightOnMoon = 1.655
         expectedWeightOnEarth = 10
         // ------------ STOP EDITING HERE  ----------------------
-        assertEquals(expectedWeightOnEarth, weightOnEarth)
-        assertEquals(expectedWeightOnMoon, weightOnMoon)
+        assert weightOnEarth == expectedWeightOnEarth
+        assert weightOnMoon == expectedWeightOnMoon
 
         // Now check out this Stackoverflow answer:
         // http://stackoverflow.com/questions/8120949/what-does-delegate-mean-in-groovy/8121750#8121750
@@ -135,7 +135,7 @@ class Koan09 extends GroovyTestCase {
         calculateWeight.delegate = [gravity: 6]
         // ------------ STOP EDITING HERE  ----------------------
         def weightOnFakePlanet = calculateWeight(10)
-        assertEquals(60, weightOnFakePlanet)
+        assert weightOnFakePlanet == 60
     }
 
 
@@ -146,8 +146,8 @@ class Koan09 extends GroovyTestCase {
         Robot robot = new Robot()
 
         // Add the x,y properties to the Robot to continue...
-        assertEquals(0, robot.x)
-        assertEquals(0, robot.y)
+        assert robot.x == 0
+        assert robot.y == 0
 
         // Now add right(), left(), up(), and down(). Change x and y accordingly.
         robot.left()
@@ -157,8 +157,8 @@ class Koan09 extends GroovyTestCase {
         robot.down()
         robot.down()
 
-        assertEquals(-1, robot.x)
-        assertEquals(-1, robot.y)
+        assert robot.x == -1
+        assert robot.y == -1
 
         // Wouldn't it be nicer if we could create shorthand versions for combo moves? For example, goLeftLeftRightDown()?
         // Read about invokeMethod() here: http://groovy.codehaus.org/Using+invokeMethod+and+getProperty
@@ -166,11 +166,11 @@ class Koan09 extends GroovyTestCase {
 
         // Using invokeMethod(), handle every possible goXYZ combination... Regular expressions will come in handy.
         robot.goLeftRightRightDown()
-        assertEquals([0, -2], [robot.x, robot.y])
+        assert [robot.x, robot.y] == [0, -2]
 
         // And what about this option?
         robot.goDownDownDownDown()
-        assertEquals([0, -6], [robot.x, robot.y])
+        assert [robot.x, robot.y] == [0, -6]
     }
 
     void test05_AddMethodsToExistingObjects() {
@@ -196,7 +196,7 @@ class Koan09 extends GroovyTestCase {
         def fizzBuzzes = (1..15).collect { it.fizzBuzz() }
         def expectedFizzBuzzes = ['1', '2', 'Fizz', '4', 'Buzz', 'Fizz', '7', '8', 'Fizz',
                 'Buzz', '11', 'Fizz', '13', '14', 'FizzBuzz']
-        assertEquals(expectedFizzBuzzes, fizzBuzzes)
+        assert fizzBuzzes == expectedFizzBuzzes
     }
 
 }
