@@ -1,6 +1,5 @@
 ## Groovy Koans Project ##
 
-
 The Groovy Koans project is a collection of small exercises in the form of unit tests, designed to get Java
 developers up to speed on Groovy features and common idioms. It starts by teaching you basic Groovy building
 blocks, and gradually builds your knowledge towards metaprogramming, slurpers, and all the goodness Groovy has
@@ -59,6 +58,8 @@ The Koan concept started way back in [Zen][zen] practice. It was then adapted by
 Please feel free to leave comments and pull requests :)
 
 Enjoy!
+
+[![Build Status](https://secure.travis-ci.org/nadavc/groovykoans.png)](http://travis-ci.org/nadavc/groovykoans)
 
 [jdk]: http://www.oracle.com/technetwork/java/javase/downloads/index.html
 [groovykoans]: http://groovykoans.org
