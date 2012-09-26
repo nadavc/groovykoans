@@ -43,8 +43,8 @@ class Koan03 extends GroovyTestCase {
         groovyFirstName = groovyPerson.firstName
         // ------------ STOP EDITING HERE  ----------------------
 
-        assertEquals('Argus', javaFirstName)
-        assertEquals('Harry', groovyFirstName)
+        assert javaFirstName == 'Argus'
+        assert groovyFirstName == 'Harry'
     }
 
     void test02_ReadOnlyFieldInGroovyBean() {
@@ -61,7 +61,7 @@ class Koan03 extends GroovyTestCase {
             failed = false
         }
 
-        assertTrue(failed)
+        assert failed
 
         // The code wrapping your additions verifies that the ReadOnlyProperty exception has been thrown.
         // The curly brackets ({}) represent a closure. We'll get into what that means very soon.
@@ -81,7 +81,7 @@ class Koan03 extends GroovyTestCase {
         transaction = new SimpleGroovyBean(title: 'Transaction', data: -30)
         // ------------ STOP EDITING HERE  ----------------------
 
-        assertEquals(-30, transaction.data)
+        assert transaction.data == -30
     }
 
     void test04_DefaultValues() {
@@ -91,7 +91,7 @@ class Koan03 extends GroovyTestCase {
         // Once you've learned how to use default values, modify the NameWithDefaultValue
         // class to set name to 'Anonymous' if no name has been specified.
         def nameObject = new NameWithDefaultValue()
-        assertEquals('Anonymous', nameObject.name)
+        assert nameObject.name == 'Anonymous'
     }
 
 }

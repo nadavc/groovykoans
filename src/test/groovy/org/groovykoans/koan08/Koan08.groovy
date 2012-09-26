@@ -52,7 +52,7 @@ class Koan08 extends GroovyTestCase {
             // ------------ STOP EDITING HERE  ----------------------
         }
         [5: 2.5, 'smile': 'smile', 'smilee': 'smiley', 'heehee': 'heehey'].each { key, expectedValue ->
-            assertEquals(expectedValue, magicClosure(key))
+        assert magicClosure(key) == expectedValue
         }
 
     }
@@ -112,8 +112,8 @@ class Koan08 extends GroovyTestCase {
         }
 
         def (intA, intB) = generateTwoRandomInts(10)
-        assertTrue(intA in 0..10)
-        assertTrue(intB in 0..10)
+        assert intA in 0..10
+        assert intB in 0..10
     }
 
 }

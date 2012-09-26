@@ -45,7 +45,7 @@ class Koan07 extends GroovyTestCase {
         // ------------ STOP EDITING HERE  ----------------------
         def result = technologies.findAll { it ==~ regexp }
 
-        assertEquals(['Grails', 'Gradle'], result)
+        assert result == ['Grails', 'Gradle']
     }
 
     void test02_MultilineStrings() {
@@ -64,7 +64,7 @@ class Koan07 extends GroovyTestCase {
 requires using special signs such as $signs
 and can become difficult to maintain"""
         // ------------ STOP EDITING HERE  ----------------------
-        assertEquals(javaString, groovyString)
+        assert groovyString == javaString
     }
 
     void test03_SlashyStrings() {
@@ -96,7 +96,7 @@ and can become difficult to maintain"""
         def groovySum = matcher.collect { it[3].toInteger() }.sum()
 
         // ^^ Look how much more concise the Groovy code is! There's even a shorter version ahead...
-        assertEquals(javaSum, groovySum)
+        assert groovySum == javaSum
     }
 
     void test04_SpecialRegexpOperators() {
@@ -115,7 +115,7 @@ and can become difficult to maintain"""
         // ------------ START EDITING HERE ----------------------
         patternInGroovy = ~/\d{3}([,\s])?\d{4}/
         // ------------ STOP EDITING HERE  ----------------------
-        assertTrue(patternInGroovy instanceof Pattern)
+        assert patternInGroovy instanceof Pattern
         assertEquals(patternInJava.pattern(), patternInGroovy.pattern())
 
 
@@ -131,7 +131,7 @@ and can become difficult to maintain"""
         // Note - there are better ways to achieve the same in Groovy (String.eachMatch, Collections.collect, etc)
         // but that's not the point of this specific exercise :)
         // ------------ STOP EDITING HERE  ----------------------
-        assertEquals(['John', 'Paul', 'George', 'Ringo'], firstNamesList)
+        assert firstNamesList == ['John', 'Paul', 'George', 'Ringo']
 
         // And finally, using the ==~ operator, check if the the following number is a valid Visa card:
         // You can get the regular expression for Visas here: http://www.regular-expressions.info/creditcard.html
@@ -140,7 +140,7 @@ and can become difficult to maintain"""
         // ------------ START EDITING HERE ----------------------
         isNumberValid = number ==~ /^4[0-9]{12}(?:[0-9]{3})?$/
         // ------------ STOP EDITING HERE  ----------------------
-        assertTrue('Visa number should be valid!', isNumberValid)
+        assert isNumberValid, 'Visa number should be valid!'
     }
 
     void test05_ReplaceAllWithClosure() {
@@ -165,7 +165,7 @@ and can become difficult to maintain"""
                           |And he told us of his vida
                           |In the land of submarines'''.stripMargin()
 
-        assertEquals(expected, replaced)
+        assert replaced == expected
     }
 
     void test06_MultilineRegexWithComments() {
@@ -192,12 +192,11 @@ and can become difficult to maintain"""
         def sum = text.findAll(regexp) { it[3].toInteger() }.sum()
         // ^^ This is even more concise that the previous example! Choose the one you feel most comfortable with.
 
-        assertEquals(1015, sum)
+        assert sum == 1015
         def options = regexp.find(/\(\?[^\)]*\)/)
-        assertTrue('A commented regex must use the x flag', options.contains('x'))
-        assertTrue('Comments can be inserted using the # character', regexp.contains('#'))
+        assert options.contains('x'), 'A commented regex must use the x flag'
+        assert regexp.contains('#'), 'Comments can be inserted using the # character'
     }
 
 
 }
-
