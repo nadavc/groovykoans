@@ -107,7 +107,7 @@ and can become difficult to maintain"""
         // More docs at http://groovy.codehaus.org/Regular+Expressions
 
         // This is how a Pattern object is defined in Java for an arbitrary phone number format
-        // (xxx-xxxx or xxxxxxx or xxx,xxxx)
+        // (xxx xxxx or xxxxxxx or xxx,xxxx)
         Pattern patternInJava = Pattern.compile("\\d{3}([,\\s])?\\d{4}");
 
         // Create the same Pattern object in Groovy

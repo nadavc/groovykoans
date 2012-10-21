@@ -19,7 +19,7 @@ import java.awt.Desktop
 apply plugin: 'groovy'
 apply plugin: 'idea'
 
-version = '0.1'
+version = '0.2'
 
 repositories {
     mavenCentral()
@@ -27,9 +27,9 @@ repositories {
 
 dependencies {
     def GROOVY_VERSION = '2.0.1'
+    def groovyComponents = ['groovy', 'groovy-ant', 'groovy-test']
 
-    groovy "org.codehaus.groovy:groovy:$GROOVY_VERSION"
-    groovy "org.codehaus.groovy:groovy-test:$GROOVY_VERSION"
+    groovy groovyComponents.collect { "org.codehaus.groovy:$it:$GROOVY_VERSION" }
 }
 
 task removeSolutions << {

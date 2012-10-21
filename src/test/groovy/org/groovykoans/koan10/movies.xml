@@ -1,0 +1,30 @@
+<movie-catalog>
+    <movie id="6">
+        <title>Total Recall</title>
+        <year>1990</year>
+    </movie>
+    <movie id="4">
+        <title>The Terminator</title>
+        <year>1984</year>
+    </movie>
+    <movie id="5">
+        <title>The Expendables</title>
+        <year>2010</year>
+    </movie>
+    <movie id="1">
+        <title>Conan the Barbarian</title>
+        <year>1982</year>
+    </movie>
+    <movie id="3">
+        <title>Predator</title>
+        <year>1987</year>
+    </movie>
+    <movie id="2">
+        <title>True Lies</title>
+        <year>1994</year>
+    </movie>
+    <movie id="7">
+        <title>Kindergarten Cop</title>
+        <year>1990</year>
+    </movie>
+</movie-catalog>
