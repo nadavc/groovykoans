@@ -41,7 +41,6 @@ To remove the solutions, run `$ ./gradlew removeSolutions` from the root of your
 #### Are there more Koans planned? How will I know? ####
 
 These are the Koans that are currently planned: 
-* Built-in builders (Xml, Html, Swing, Ant)
 * Creating your own builder
 * SQL and database access
 * Testing
