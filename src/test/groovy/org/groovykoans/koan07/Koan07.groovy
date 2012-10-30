@@ -157,7 +157,7 @@ and can become difficult to maintain"""
                       |In the land of submarines'''.stripMargin()
         def result
         // ------------ START EDITING HERE ----------------------
-        def replaced = song.replaceAll(/\w+/) { dictionary[it] ?: it }
+        result = song.replaceAll(/\w+/) { dictionary[it] ?: it }
         // ------------ STOP EDITING HERE  ----------------------
 
         def expected = '''|In the ciudad where I was born
@@ -165,7 +165,7 @@ and can become difficult to maintain"""
                           |And he told us of his vida
                           |In the land of submarines'''.stripMargin()
 
-        assert replaced == expected
+        assert result == expected
     }
 
     void test06_MultilineRegexWithComments() {
