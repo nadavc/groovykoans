@@ -61,12 +61,12 @@ class Koan10 extends GroovyTestCase {
         assert moviesWithThe.containsAll(['Conan the Barbarian', 'The Expendables', 'The Terminator'])
 
         // How many movie ids have a value greater than 5?
-        def movieIdsLargerThan5
+        def movieIdsGreaterThan5
         // ------------ START EDITING HERE ----------------------
         def xml3 = new XmlSlurper().parse('src/test/groovy/org/groovykoans/koan10/movies.xml')
-        movieIdsLargerThan5 = xml3.movie.findAll { it.@id.text().toInteger() > 5 }.size()
+        movieIdsGreaterThan5 = xml3.movie.findAll { it.@id.text().toInteger() > 5 }.size()
         // ------------ STOP EDITING HERE  ----------------------
-        assert movieIdsLargerThan5 == 2
+        assert movieIdsGreaterThan5 == 2
     }
 
     void test02_XmlSlurpersReader2() {
