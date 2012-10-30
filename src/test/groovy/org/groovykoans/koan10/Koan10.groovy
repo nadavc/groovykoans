@@ -60,7 +60,7 @@ class Koan10 extends GroovyTestCase {
         // ------------ STOP EDITING HERE  ----------------------
         assert moviesWithThe.containsAll(['Conan the Barbarian', 'The Expendables', 'The Terminator'])
 
-        // How many movie ids are larger than 5?
+        // How many movie ids have a value greater than 5?
         def movieIdsLargerThan5
         // ------------ START EDITING HERE ----------------------
         def xml3 = new XmlSlurper().parse('src/test/groovy/org/groovykoans/koan10/movies.xml')
