@@ -6,11 +6,11 @@
     <script type='text/javascript'>
         $(document).ready(function () {
             $("[rel='popover']").popover({
-                trigger: 'hover',
-                html: true
+                trigger:'hover',
+                html:true
             });
             $("[rel='tooltip']").tooltip({
-                placement: 'bottom'
+                placement:'bottom'
             });
         });
 
@@ -61,20 +61,26 @@
         _gaq.push(['_setAccount', 'UA-34499334-1']);
         _gaq.push(['_trackPageview']);
 
-        (function() {
-            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
             ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
         })();
     </script>
-    <script type="text/javascript">var switchTo5x=true;</script>
+    <script type="text/javascript">var switchTo5x = true;</script>
     <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
     <script type="text/javascript" src="http://s.sharethis.com/loader.js"></script>
 </head>
 <body>
 
 <div class="hero-unit">
-    <img id="groovyLogo" src="img/groovy-logo-medium.png"/><h1>Koans</h1>
+    <img id="groovyLogo" src="img/groovy-logo-medium.png"/>
+
+    <h1>Koans</h1>
+
     <p>the missing groovy tutorial</p>
 </div>
 
@@ -101,10 +107,11 @@
         <h4>Groovy Koans v0.2</h4>
 
         <br/>
-        <a class="btn btn-primary btn-large" href="https://github.com/nadavc/groovykoans/zipball/master">Download &raquo;</a>
+        <a class="btn btn-primary btn-large"
+           href="https://github.com/nadavc/groovykoans/zipball/master">Download &raquo;</a>
 
         <div id="dlDetails">
-           release date: 2012/10/21
+            release date: 2012/10/21
         </div>
     </div>
 
@@ -114,12 +121,15 @@
         <ul>
             <li>Make sure you have
                 <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank">
-                JDK 1.6+</a> installed</li>
+                    JDK 1.6+</a> installed
+            </li>
             <li>Download the Koans package and unzip</li>
             <li><a href="#" rel="popover" data-title="Screenshot" data-content="<img src='img/removeSolutions.png'/>'">
-                Remove</a> the solutions</li>
+                Remove</a> the solutions
+            </li>
             <li>Execute <a href="#" rel="popover" data-title="Screenshot" data-content="<img src='img/koan01.png'/>'">
-                Koan01</a>... and fail</li>
+                Koan01</a>... and fail
+            </li>
             <li>Fix code, and execute again</li>
             <li>Keep going until you're fluent at Groovy :)</li>
             <li>For troubleshooting tips, see the <a href="http://github.com/nadavc/groovykoans">GitHub page</a></li>
@@ -130,8 +140,7 @@
 <div>
     <h3>author</h3>
 
-    <p>I'd be happy to receive corrections, suggestions, pull-requests, or vi4gra ads... but keep in mind that this
-        is still work in progress.
+    <p>This project is still work in progress! I'd be happy to receive pull-requests, corrections, or suggestions... 
     </p>
 
     <strong><a href="http://twitter.com/nadavc">@nadavc</a></strong>
@@ -146,13 +155,19 @@
         It was then adapted by the good folks of <a href="http://rubykoans.com">rubykoans.com</a> and perfected by
         <a href="https://github.com/jimwebber/neo4j-tutorial">Neo4j</a>. The Groovy Koans project is licensed under the
         <a href="http://www.apache.org/licenses/LICENSE-2.0.html">Apache 2 License</a>.
-
     </p>
+
+    <a href="http://www.jetbrains.com/idea/"
+       style="position: relative;display:block; width:127px; height:37px; border:0; margin:0;padding:0;text-decoration:none;text-indent:0;">
+        <span style="margin: 0;padding: 0;position: absolute;top: 0;left: 33px;font-size: 10px;cursor:pointer;  background-image:none;border:0;color: #0d3a9e; font-family: trebuchet ms,arial,sans-serif;font-weight: normal;text-align:left;">Proud user of</span><img
+            src="http://www.jetbrains.com/idea/opensource/img/all/banners/idea125x37_white.gif"
+            alt="The best Java IDE" border="0"/></a>
+
 </div>
 
 
 <script>
-    var options={ "publisher": "dcedf9eb-0d54-4563-85d7-23f3c5b9619e", "position": "right", "ad": { "visible": false, "openDelay": 5, "closeDelay": 0}};
+    var options = { "publisher":"dcedf9eb-0d54-4563-85d7-23f3c5b9619e", "position":"right", "ad":{ "visible":false, "openDelay":5, "closeDelay":0}};
     var st_hover_widget = new sharethis.widgets.hoverbuttons(options);
 </script>
 <script src="js/bootstrap.min.js"></script>
