@@ -90,7 +90,7 @@ class Koan10 extends GroovyTestCase {
     }
 
     void test03_XmlMarkupBuilder1() {
-        // Groovy's XmlMarkupBuilder allows you to create tree structures very easily.
+        // Groovy's MarkupBuilder allows you to create tree structures very easily.
         // Read here: http://groovy.codehaus.org/Creating+XML+using+Groovy's+MarkupBuilder
         // And here: http://groovy.codehaus.org/api/groovy/xml/MarkupBuilder.html
 

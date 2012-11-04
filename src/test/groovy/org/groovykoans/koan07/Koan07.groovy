@@ -13,7 +13,7 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
- 
+
 package org.groovykoans.koan07
 
 import java.util.regex.Pattern
@@ -56,8 +56,8 @@ class Koan07 extends GroovyTestCase {
 
         // Create the string below with Groovy
         String javaString = "In Java a multiline string\n" +
-                            "requires using special signs such as " + signs + "\n" +
-                            "and can become difficult to maintain"
+                "requires using special signs such as " + signs + "\n" +
+                "and can become difficult to maintain"
         String groovyString
         // ------------ START EDITING HERE ----------------------
         groovyString = """In Java a multiline string
@@ -190,7 +190,7 @@ and can become difficult to maintain"""
                  (\d+)      # leftover/
         // ------------ STOP EDITING HERE  ----------------------
         def sum = text.findAll(regexp) { it[3].toInteger() }.sum()
-        // ^^ This is even more concise that the previous example! Choose the one you feel most comfortable with.
+        // ^^ This is even more concise than the previous example! Choose the one you feel most comfortable with.
 
         assert sum == 1015
         def options = regexp.find(/\(\?[^\)]*\)/)

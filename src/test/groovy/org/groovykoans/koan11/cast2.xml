@@ -1,0 +1,18 @@
+<movie name='Green Mile'>
+    <character name='Paul Edgecomb' actor='Tom Hanks' />
+    <character name='Jan Edgecomb' actor='Bonnie Hunt' />
+    <character name='Brutus "Brutal" Howell' actor='David Morse' />
+    <character name='Percy Wetmore' actor='Doug Hutchison' />
+    <character name='"Wild Bill" Wharton' actor='Sam Rockwell' />
+    <character name='Eduard "Del" Delacroix' actor='Michael Jeter' />
+    <character name='Warden Hal Moores' actor='James Cromwell' />
+    <character name='Melinda Moores' actor='Patricia Clarkson' />
+    <character name='Dean Stanton' actor='Barry Pepper' />
+    <character name='Harry Terwilliger' actor='Jeffrey DeMunn' />
+    <character name='Old Paul Edgecomb' actor='Dabbs Greer' />
+    <character name='Burt Hammersmith' actor='Gary Sinise' />
+    <character name='Arlen Bitterbuck' actor='Graham Greene' />
+    <character name='Klaus Detterick' actor='William Sadler' />
+    <character name='Jack Van Hay' actor='Bill McKinney' />
+    <character name='Elaine Connelly' actor='Eve Brent' />
+</movie>
