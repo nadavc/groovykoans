@@ -13,13 +13,13 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
- 
+
 import java.awt.Desktop
 
 apply plugin: 'groovy'
-apply plugin: 'idea'
+apply from: 'gradle/idea.gradle'
 
-version = '0.3'
+version = '0.3.1'
 
 repositories {
     mavenCentral()
@@ -49,10 +49,9 @@ tasks.addRule('Pattern: koan<Number>: Runs a single Koan') { String taskName ->
         def koanName = taskName[0].toUpperCase() + taskName[1..-1]
 
         // make all Test tasks a dependency of the dummy task and reset the includes
-        def testIncludes = WrapUtil.toSet("**/${koanName}.class")
         tasks.withType(Test) { testTask ->
             logger.info("Single Koan Execution: apply include pattern to Test task <$testTask.name>")
-            testTask.includes = testIncludes
+            testTask.includes = WrapUtil.toSet("**/${koanName}.class")
             dummyTask.dependsOn testTask
         }
     }
@@ -62,14 +61,17 @@ task wrapper(type: Wrapper) {
     gradleVersion = '1.1'
 }
 
-
 // show welcome message
-List<String> lines = file('one-liners.txt').readLines()
-def quote = lines.get(new Random().nextInt(lines.size() - 1))
-println "Groovy Koans ${version}:\n${quote}"
-println "${'-' * quote.size()}\n"
+task sayHello << {
+    List<String> lines = file('gradle/one-liners.txt').readLines()
+    def quote = lines.get(new Random().nextInt(lines.size() - 1))
+    println "Groovy Koans ${version}:\n${quote}"
+    println "${'-' * quote.size()}\n"
+}
 
-// launch browser if test failed
+test.dependsOn sayHello
+
+// launch browser if test failed. otherwise show that koan is complete
 gradle.taskGraph.afterTask { task, taskState ->
     if (task.name != 'test')
         return
@@ -91,5 +93,3 @@ tasks.withType(Test) { testTask ->
         println result.resultType
     }
 }
-
-
