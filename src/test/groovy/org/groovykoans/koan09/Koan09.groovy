@@ -84,27 +84,13 @@ class Koan09 extends GroovyTestCase {
         // ------------ STOP EDITING HERE  ----------------------
         assert this.class.name == expectedThisClassName
 
-        def outerClosure = {->
-            println 'hello from first closure'
-            def innerClosure = {->
-                println 'hello from second closure'
-            }
-        }
         // The owner is the same thing as 'this'. Unless you are surrounded by a Closure, in which case the Closure is
         // your owner.
-        def expectedOuterClosureOwnerClassName, expectedInnerClosureOwnerClassName
-        // ------------ START EDITING HERE ----------------------
-        expectedOuterClosureOwnerClassName = 'org.groovykoans.koan09.Koan09'
-        expectedInnerClosureOwnerClassName = 'org.groovykoans.koan09.Koan09$_test03_ThisDelegateAndOwner_closure3'
-        // ------------ STOP EDITING HERE  ----------------------
-        assert outerClosure.owner.class.name == expectedOuterClosureOwnerClassName
-        assert outerClosure().owner.class.name == expectedInnerClosureOwnerClassName
 
         // And finally, delegate is the same as owner, only that it can be modified by an external script.
-        // Changing the delegate allows you to change the 'context' in which the closure is run. It may
-        // seem a bit artificial, but when we introduce Groovy Builders, you'll see how powerful this feature is.
+        // Changing the delegate allows you to change the 'context' in which the closure is run.
 
-        // First, let's revisit closures. In Koan04, we mentioned that a closure has parameters, an implicit variable,
+        // Let's revisit closures. In Koan04, we mentioned that a closure has parameters, an implicit variable,
         // and free variables. What are free variables? They're the variables that are 'inherited' into the closure
         // from the environment the closure was defined in. For example:
         def calculateWeight = { mass ->
