@@ -1,19 +1,14 @@
 apply plugin: 'idea'
 
-ideaWorkspace {
-    outputFile = file("${rootProject.projectDir}/idea/${project.name}.iws")
-}
+ideaWorkspace.outputFile = file("${rootProject.projectDir}/idea/${project.name}.iws")
 
-ideaModule {
-    outputFile = file("${rootProject.projectDir}/idea/${project.name}.iml")
-}
-ideaProject {
+ideaModule.outputFile = file("${rootProject.projectDir}/idea/${project.name}.iml")
+
+idea.project {
     outputFile = file("${rootProject.projectDir}/idea/${rootProject.name}.ipr")
-}
 
-idea.project.ipr {
-    withXml { provider ->
-        provider.node.component.find { it.@name == 'VcsDirectoryMappings' }.mapping.each {
+    ipr.withXml { provider ->
+        provider.node.component.find { it.@name == 'VcsDirectoryMappings' }.mapping[0].with {
             it.@vcs = 'Git'
             it.@directory = '$PROJECT_DIR$/..'
         }
