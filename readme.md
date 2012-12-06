@@ -7,7 +7,7 @@ to offer.
 
 ## Getting Started ##
 1.  Make sure you have [JDK 1.6+][jdk] installed 
-2.  Download the [Koans][groovykoans] package and unzip
+2.  Clone the GitHub repository with `$ git clone https://github.com/nadavc/groovykoans.git`
 3.  Remove the solutions from the Koans using `$ ./gradlew removeSolutions`
 4.  Execute Koan01 with `$ ./gradlew koan01` and fail (or any other Koan using `$ ./gradlew koan##`)
 5.  Fix code, and execute again
