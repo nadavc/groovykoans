@@ -7,7 +7,7 @@ to offer.
 
 ## Getting Started ##
 1.  Make sure you have [JDK 1.6+][jdk] installed 
-2.  Download the [Koans][groovykoans] package and unzip
+2.  Download and unzip the [Koans][zip] (or clone the GitHub repository with `$ git clone https://github.com/nadavc/groovykoans.git`)
 3.  Remove the solutions from the Koans using `$ ./gradlew removeSolutions`
 4.  Execute Koan01 with `$ ./gradlew koan01` and fail (or any other Koan using `$ ./gradlew koan##`)
 5.  Fix code, and execute again
@@ -62,7 +62,7 @@ Enjoy!
 [![Build Status](https://secure.travis-ci.org/nadavc/groovykoans.png)](http://travis-ci.org/nadavc/groovykoans)
 
 [jdk]: http://www.oracle.com/technetwork/java/javase/downloads/index.html
-[groovykoans]: http://groovykoans.org
+[zip]: https://github.com/nadavc/groovykoans/archive/master.zip
 [ideac]: http://www.jetbrains.com/idea/download/
 [twitter]: http://twitter.com/nadavc
 [github]: http://github.com/nadavc
