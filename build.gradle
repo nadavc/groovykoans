@@ -19,7 +19,7 @@ import java.awt.Desktop
 apply plugin: 'groovy'
 apply from: 'gradle/idea.gradle'
 
-version = '0.3.1'
+version = '0.3.2'
 
 repositories {
     mavenCentral()

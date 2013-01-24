@@ -142,7 +142,9 @@ class Koan04 extends GroovyTestCase {
         }
         // ------------ STOP EDITING HERE  ----------------------
 
-        assertEquals(new File("$prefix/exercise-solved.txt").text, filteredResult.toString().trim())
+        String result = filteredResult.toString().trim().replaceAll(/\n|\n\r|\r/, /\n/)
+        String answer = new File("$prefix/exercise-solved.txt").text.replaceAll(/\n|\n\r|\r/, /\n/)
+        assert answer == result
     }
 
     void test03_MoreClosureSyntacticSugar() {
