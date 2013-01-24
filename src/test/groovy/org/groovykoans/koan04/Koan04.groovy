@@ -73,7 +73,7 @@ class Koan04 extends GroovyTestCase {
         expectedHappyBirthdayGranger = 'Happy Birthday To Hermione'
         // ------------ STOP EDITING HERE  ----------------------
         assert happyBirthdayGranger == expectedHappyBirthdayGranger
-
+		
         // Create a closure that accepts two integers, adds them, and multiplies the result by two
         def resultClosure
         // ------------ START EDITING HERE ----------------------
