@@ -51,7 +51,7 @@ class Koan06 extends GroovyTestCase {
             return it.toString()
         }
         // ------------ STOP EDITING HERE  ----------------------
-        assertEquals(javaResult, groovyResult)
+        assert groovyResult == javaResult
     }
 
     void test02_CollectMethodOnLists() {
@@ -66,7 +66,7 @@ class Koan06 extends GroovyTestCase {
         // ------------ START EDITING HERE ----------------------
         uniqueTypes = differentTypes.collect { it.class }.unique()
         // ------------ STOP EDITING HERE  ----------------------
-        assertEquals([Integer, String], uniqueTypes)
+        assert uniqueTypes == [Integer, String]
     }
 
     void test03_FileIteration() {
@@ -82,7 +82,7 @@ class Koan06 extends GroovyTestCase {
                 count++
         }
         // ------------ STOP EDITING HERE  ----------------------
-        assertEquals(3, count)
+        assert count == 3
 
     }
 
@@ -97,7 +97,7 @@ class Koan06 extends GroovyTestCase {
             }
         }
         // ------------ STOP EDITING HERE  ----------------------
-        assertEquals([211, 223, 227, 229, 233, 239, 241], primesBetween200And250)
+        assert primesBetween200And250 == [211, 223, 227, 229, 233, 239, 241]
 
     }
 

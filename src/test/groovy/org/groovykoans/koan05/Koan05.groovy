@@ -54,7 +54,7 @@ class Koan05 extends GroovyTestCase {
             idListResult << "$key$value"
         }
         // ------------ STOP EDITING HERE  ----------------------
-        assertEquals(['333Matthew', '233Christopher', '133Dominic'], idListResult)
+        assert idListResult == ['333Matthew', '233Christopher', '133Dominic']
     }
 
     void test02_Ranges() {
@@ -69,7 +69,7 @@ class Koan05 extends GroovyTestCase {
         // ------------ START EDITING HERE ----------------------
         expectedRange = [5, 6, 7, 8, 9, 10]
         // ------------ STOP EDITING HERE  ----------------------
-        assertEquals(expectedRange, range)
+        assert range == expectedRange
     }
 
     void test03_IterateOnRanges() {
@@ -85,7 +85,7 @@ class Koan05 extends GroovyTestCase {
                 rangeResult << value
         }
         // ------------ STOP EDITING HERE  ----------------------
-        assertEquals(['a', 'c', 'e', 'g', 'i', 'k', 'm', 'o', 'q', 's', 'u', 'w', 'y'], rangeResult)
+        assert rangeResult == ['a', 'c', 'e', 'g', 'i', 'k', 'm', 'o', 'q', 's', 'u', 'w', 'y']
     }
 
 

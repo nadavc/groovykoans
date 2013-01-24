@@ -48,7 +48,8 @@ class Koan04 extends GroovyTestCase {
         // ------------ START EDITING HERE ----------------------
         helloFromClosureResult = 'Hello from Closure'
         // ------------ STOP EDITING HERE  ----------------------
-        assertEquals(helloFromClosure, helloFromClosureResult)
+
+        assert helloClosureResult == expectedHelloClosureResult
 
         // Closures can also accept parameters, like so
         def personalizedHelloClosure = { String name -> return "Hello $name" }
@@ -59,7 +60,8 @@ class Koan04 extends GroovyTestCase {
         // ------------ START EDITING HERE ----------------------
         helloRonaldaResult = 'Hello Ronalda'
         // ------------ STOP EDITING HERE  ----------------------
-        assertEquals(helloRonalda, helloRonaldaResult)
+
+        assert helloRonalda == expectedHelloRonalda
 
         // But there's a shorthand version for this. One parameter closures implicitly add a variable named 'it'
         // which represents that single parameter. We also learned that 'return' isn't mandatory in functions if
@@ -72,7 +74,8 @@ class Koan04 extends GroovyTestCase {
         // ------------ START EDITING HERE ----------------------
         happyBirthdayGrangerResult = 'Happy Birthday To Hermione'
         // ------------ STOP EDITING HERE  ----------------------
-        assertEquals(happyBirthdayGranger, happyBirthdayGrangerResult)
+		
+        assert happyBirthdayGranger == expectedHappyBirthdayGranger
 
         // Create a closure that accepts two integers, adds them, and multiplies the result by two
         def resultClosure
@@ -80,7 +83,7 @@ class Koan04 extends GroovyTestCase {
         resultClosure = { int a, int b -> (a + b) * 2 }
         // ------------ STOP EDITING HERE  ----------------------
 
-        assertEquals(10, resultClosure(2, 3))
+        assert resultClosure(2, 3) == 10
         shouldFail {
             resultClosure('one', 'two')
         }
@@ -109,7 +112,7 @@ class Koan04 extends GroovyTestCase {
 
         // Let's check that we got the same result (you can use the assertX methods)
         // ------------ START EDITING HERE ----------------------
-        assertEquals(groovyResult, javaResult)
+        assert javaResult == groovyResult
         // ------------ STOP EDITING HERE  ----------------------
 
         // To make the code even cleaner, Groovy allows some syntactic sugar. If your method has a closure as its
@@ -126,7 +129,8 @@ class Koan04 extends GroovyTestCase {
         // ------------ START EDITING HERE ----------------------
         monkeyColorResult = ['blue', 'red', 'purple']
         // ------------ STOP EDITING HERE  ----------------------
-        assertEquals(monkeyColors, monkeyColorResult)
+		
+        assert monkeyColors == expectedMonkeyColors
 
         // Okay. Time for an exercise. Have a look at Groovy's additions on top of the File class by reading
         // docs at http://groovy.codehaus.org/groovy-jdk/java/io/File.html
@@ -142,7 +146,9 @@ class Koan04 extends GroovyTestCase {
         }
         // ------------ STOP EDITING HERE  ----------------------
 
-        assertEquals(new File("$prefix/exercise-solved.txt").text, filteredResult.toString().trim())
+        String result = filteredResult.toString().trim().replaceAll(/\n|\n\r|\r/, /\n/)
+        String answer = new File("$prefix/exercise-solved.txt").text.replaceAll(/\n|\n\r|\r/, /\n/)
+        assert answer == result
     }
 
     void test03_MoreClosureSyntacticSugar() {
@@ -158,7 +164,7 @@ class Koan04 extends GroovyTestCase {
         countResult = 3
         // ------------ STOP EDITING HERE  ----------------------
 
-        assertEquals(count, countResult)
+        assert count == expectedCount
 
         // Admittedly, that past example doesn't make the code any clearer.
         // However, when we have methods with a closure as a parameter, it removes a lot of the noise:
@@ -171,7 +177,8 @@ class Koan04 extends GroovyTestCase {
         // ------------ START EDITING HERE ----------------------
         mysteryListResult = ['Baby', 'Yeah']
         // ------------ STOP EDITING HERE  ----------------------
-        assertEquals(mysteryList, mysteryListResult)
+
+        assert mysteryList == expectedMysteryList
 
     }
 
