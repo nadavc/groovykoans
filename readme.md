@@ -59,8 +59,6 @@ Please feel free to leave comments and pull requests :)
 
 Enjoy!
 
-[![Build Status](https://secure.travis-ci.org/nadavc/groovykoans.png)](http://travis-ci.org/nadavc/groovykoans)
-
 [jdk]: http://www.oracle.com/technetwork/java/javase/downloads/index.html
 [zip]: https://github.com/nadavc/groovykoans/archive/master.zip
 [ideac]: http://www.jetbrains.com/idea/download/
