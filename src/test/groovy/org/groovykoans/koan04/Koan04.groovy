@@ -41,26 +41,24 @@ class Koan04 extends GroovyTestCase {
         def sayHelloClosure = { return 'Hello from Closure' }
 
         // We can then execute it as if it were a regular method, using:
-        def helloFromClosure = sayHelloClosure()
+        def helloClosureResult = sayHelloClosure()
 
         // What is the result from the above execution?
-        def helloFromClosureResult
+        def expectedHelloClosureResult
         // ------------ START EDITING HERE ----------------------
-        helloFromClosureResult = 'Hello from Closure'
+        expectedHelloClosureResult = 'Hello from Closure'
         // ------------ STOP EDITING HERE  ----------------------
-
         assert helloClosureResult == expectedHelloClosureResult
 
         // Closures can also accept parameters, like so
         def personalizedHelloClosure = { String name -> return "Hello $name" }
-        def helloRonalda = personalizedHelloClosure('Ronalda')
+        String helloRonalda = personalizedHelloClosure('Ronalda')
 
         // What is the result from the above execution?
-        def helloRonaldaResult
+        String expectedHelloRonalda
         // ------------ START EDITING HERE ----------------------
-        helloRonaldaResult = 'Hello Ronalda'
+        expectedHelloRonalda = 'Hello Ronalda'
         // ------------ STOP EDITING HERE  ----------------------
-
         assert helloRonalda == expectedHelloRonalda
 
         // But there's a shorthand version for this. One parameter closures implicitly add a variable named 'it'
@@ -70,13 +68,12 @@ class Koan04 extends GroovyTestCase {
         String happyBirthdayGranger = happyBirthdayClosure('Hermione')
 
         // What is the result from the above execution?
-        def happyBirthdayGrangerResult
+        def expectedHappyBirthdayGranger
         // ------------ START EDITING HERE ----------------------
-        happyBirthdayGrangerResult = 'Happy Birthday To Hermione'
+        expectedHappyBirthdayGranger = 'Happy Birthday To Hermione'
         // ------------ STOP EDITING HERE  ----------------------
-		
         assert happyBirthdayGranger == expectedHappyBirthdayGranger
-
+		
         // Create a closure that accepts two integers, adds them, and multiplies the result by two
         def resultClosure
         // ------------ START EDITING HERE ----------------------
@@ -125,11 +122,10 @@ class Koan04 extends GroovyTestCase {
         }
 
         // What will monkeyColors contain?
-        def monkeyColorResult = []
+        def expectedMonkeyColors = []
         // ------------ START EDITING HERE ----------------------
-        monkeyColorResult = ['blue', 'red', 'purple']
+        expectedMonkeyColors = ['blue', 'red', 'purple']
         // ------------ STOP EDITING HERE  ----------------------
-		
         assert monkeyColors == expectedMonkeyColors
 
         // Okay. Time for an exercise. Have a look at Groovy's additions on top of the File class by reading
@@ -159,9 +155,9 @@ class Koan04 extends GroovyTestCase {
 
         // Can you guess what count() does? If not, look it up in
         // http://groovy.codehaus.org/groovy-jdk/java/lang/String.html
-        def countResult
+        def expectedCount
         // ------------ START EDITING HERE ----------------------
-        countResult = 3
+        expectedCount = 3
         // ------------ STOP EDITING HERE  ----------------------
 
         assert count == expectedCount
@@ -173,11 +169,10 @@ class Koan04 extends GroovyTestCase {
         }
 
         // What will the value of mysteryList be?
-        def mysteryListResult
+        def expectedMysteryList
         // ------------ START EDITING HERE ----------------------
-        mysteryListResult = ['Baby', 'Yeah']
+        expectedMysteryList = ['Baby', 'Yeah']
         // ------------ STOP EDITING HERE  ----------------------
-
         assert mysteryList == expectedMysteryList
 
     }
