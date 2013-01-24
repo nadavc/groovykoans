@@ -142,8 +142,8 @@ class Koan04 extends GroovyTestCase {
         }
         // ------------ STOP EDITING HERE  ----------------------
 
-        String result = filteredResult.toString().trim().replaceAll(/\n|\n\r|\r/, /\n/)
-        String answer = new File("$prefix/exercise-solved.txt").text.replaceAll(/\n|\n\r|\r/, /\n/)
+        String result = filteredResult.toString().trim().replaceAll(/[\n\r]+/, /\n/)
+        String answer = new File("$prefix/exercise-solved.txt").text.replaceAll(/[\n\r]+/, /\n/)
         assert answer == result
     }
 
