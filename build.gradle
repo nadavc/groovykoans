@@ -19,7 +19,7 @@ import java.awt.Desktop
 apply plugin: 'groovy'
 apply from: 'gradle/idea.gradle'
 
-version = '0.3.3'
+version = '0.3.4'
 
 repositories {
     mavenCentral()
@@ -58,7 +58,7 @@ tasks.addRule('Pattern: koan<Number>: Runs a single Koan') { String taskName ->
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '1.4'
+    gradleVersion = '1.6'
 }
 
 // show welcome message
