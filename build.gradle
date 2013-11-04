@@ -1,5 +1,5 @@
 /**
- * Copyright 2012 The original author or authors
+ * Copyright 2012-2013 The original author or authors
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -14,12 +14,14 @@
  *  limitations under the License.
  */
 
-import java.awt.Desktop
+
+import java.awt.*
+import java.util.List
 
 apply plugin: 'groovy'
 apply from: 'gradle/idea.gradle'
 
-version = '0.3.4'
+version = '0.4'
 
 repositories {
     mavenCentral()
@@ -58,7 +60,7 @@ tasks.addRule('Pattern: koan<Number>: Runs a single Koan') { String taskName ->
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '1.6'
+    gradleVersion = '1.8'
 }
 
 // show welcome message

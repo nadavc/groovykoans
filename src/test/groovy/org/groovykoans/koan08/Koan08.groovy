@@ -1,5 +1,5 @@
 /**
- * Copyright 2012 The original author or authors
+ * Copyright 2012-2013 The original author or authors
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -13,7 +13,7 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
- 
+
 package org.groovykoans.koan08
 
 /**
@@ -104,7 +104,7 @@ class Koan08 extends GroovyTestCase {
         // http://groovy.codehaus.org/Multiple+Assignment
 
         // Create a closure that returns two random integers in a given range
-        def generateTwoRandomInts=  { int maxInt ->
+        def generateTwoRandomInts = { int maxInt ->
             // ------------ START EDITING HERE ----------------------
             def random = new Random()
             [random.nextInt(maxInt), random.nextInt(maxInt)]

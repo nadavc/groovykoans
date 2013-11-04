@@ -1,5 +1,5 @@
 /**
- * Copyright 2012 The original author or authors
+ * Copyright 2012-2013 The original author or authors
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -13,7 +13,7 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
- 
+
 package org.groovykoans.koan01
 
 /**
@@ -109,8 +109,8 @@ class Koan01 extends GroovyTestCase {
     void test05_ElvisAndSafeNavigation() {
         // Preparation code for the examples that follow. We'll get to this code in later Koans.
         User player = new User('Ronaldo', 'Nazário de Lima', 'ron', null)
-        UserService userServiceWithUserLoggedIn = [getLoggedInUser: {player}] as UserService
-        UserService userServiceWithoutLoggedInUser = [getLoggedInUser: {null}] as UserService
+        UserService userServiceWithUserLoggedIn = [getLoggedInUser: { player }] as UserService
+        UserService userServiceWithoutLoggedInUser = [getLoggedInUser: { null }] as UserService
 
         // Groovy introduces two convenient operators for dealing with nulls: elvis (?:) and safe navigation (?.)
         // Read all about it at http://groovy.codehaus.org/Operators#Operators-ElvisOperator
@@ -121,7 +121,8 @@ class Koan01 extends GroovyTestCase {
         String firstName = player.getFirstName();
         String javaDisplayName = firstName == null ? player.getUsername() : firstName;
         String javaCity = "";
-        if (player.getAddress() != null && player.getAddress().getCity() != null) { // Be careful of NullPointerExceptions
+        if (player.getAddress() != null && player.getAddress().getCity() != null) {
+            // Be careful of NullPointerExceptions
             javaCity = player.getAddress().getCity();
         }
 

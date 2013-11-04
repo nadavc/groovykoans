@@ -1,5 +1,5 @@
 /**
- * Copyright 2012 The original author or authors
+ * Copyright 2012-2013 The original author or authors
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -13,7 +13,7 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
- 
+
 package org.groovykoans.koan09
 
 import org.codehaus.groovy.runtime.InvokerHelper
@@ -39,7 +39,7 @@ class Robot {
     }
 
     Object invokeMethod(String methodName, Object args) {
-        if (methodName ==~ /go(Left|Right|Up|Down)*/) {
+        if (methodName==~/go(Left|Right|Up|Down)*/) {
             methodName.findAll(/(?i)(left|right|up|down)/) { match, String action ->
                 InvokerHelper.getMetaClass(this).invokeMethod(this, action.toLowerCase(), null)
             }

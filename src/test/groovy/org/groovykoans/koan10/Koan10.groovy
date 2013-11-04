@@ -1,5 +1,5 @@
 /**
- * Copyright 2012 The original author or authors
+ * Copyright 2012-2013 The original author or authors
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -81,7 +81,7 @@ class Koan10 extends GroovyTestCase {
         def listOfNodeChildren = xml.movie.list().sort { node1, node2 ->
             def year1 = node1.year.text()
             def year2 = node2.year.text()
-            return (year1 == year2) ? node1.title.text() <=> node2.title.text() : year1 <=> year2
+            return (year1 == year2) ? node1.title.text()<=>node2.title.text() : year1<=>year2
         }
         sortedList = listOfNodeChildren.collect { it.title.text() }
         // ------------ STOP EDITING HERE  ----------------------

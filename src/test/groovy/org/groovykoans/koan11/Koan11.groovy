@@ -1,5 +1,5 @@
 /**
- * Copyright 2012 The original author or authors
+ * Copyright 2012-2013 The original author or authors
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -16,11 +16,11 @@
 
 package org.groovykoans.koan11
 
-import java.sql.DriverManager
-import java.sql.Connection
-import java.sql.PreparedStatement
 import groovy.sql.Sql
 
+import java.sql.Connection
+import java.sql.DriverManager
+import java.sql.PreparedStatement
 /**
  * Koans11 - Groovy and SQL
  *
