@@ -27,7 +27,7 @@ class StaticFactory {
     List<Integer> work() {
         numbers.collect {
             getWorker().work(it)
-        }              K
+        }
     }
 
 
