@@ -25,7 +25,7 @@ package org.groovykoans.koan08
 class Koan08 extends GroovyTestCase {
 
     void test01_SwitchStatements() {
-        // Some people consider switch-case clauses to be a code small because the same behavior can be
+        // Some people consider switch-case clauses to be a code smell because the same behavior can be
         // achieved using polymorphism. Having said that, let's look at what Groovy has to offer.
         // Have a read here: http://groovy.codehaus.org/Logical+Branching#LogicalBranching-switchstatement
 
