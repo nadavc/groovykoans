@@ -55,7 +55,7 @@ class Koan06 extends GroovyTestCase {
     }
 
     void test02_CollectMethodOnLists() {
-        // We're often requires to iterate through a whole list and and perform some sort of transformation on
+        // We're often required to iterate through a whole list and and perform some sort of transformation on
         // some (or all) of the items, returning a new list. Groovy has a method just for that:
         // http://groovy.codehaus.org/groovy-jdk/java/lang/Object.html#collect(groovy.lang.Closure)
 

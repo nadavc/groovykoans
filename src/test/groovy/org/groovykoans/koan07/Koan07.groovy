@@ -102,7 +102,7 @@ and can become difficult to maintain"""
         // Groovy is very useful for text manipulation, and as such regular expressions get 3 special operators:
         // ~str (tilde) : creates a Pattern object from a string. Equivalent to Pattern.compile(str)
         // str =~ pattern : creates a Matcher from a regex and a string. Same as Pattern.compile(pattern).matcher(str)
-        // str ==~ pattern : returns a boolean if pattern matches str. Same as Pattern.compile(pattern).matches()
+        // str ==~ pattern : returns a boolean if pattern matches str. Same as Pattern.matches(pattern, str)
         // More docs at http://groovy.codehaus.org/Regular+Expressions
 
         // This is how a Pattern object is defined in Java for an arbitrary phone number format
