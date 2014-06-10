@@ -42,8 +42,8 @@ class Koan01 extends GroovyTestCase {
 
         // Assign our variables the required values to continue...
         // ------------ START EDITING HERE ----------------------
-        hello = "Hello"
-        assertion = true
+
+
         // ------------ STOP EDITING HERE  ----------------------
 
         assert assertion, 'Assign "true" to the "assertion" variable to proceed'
@@ -64,7 +64,8 @@ class Koan01 extends GroovyTestCase {
         // Create the target string with the ${} mechanism. Remember that ${} can contain method calls too!
         String result
         // ------------ START EDITING HERE ----------------------
-        result = "The size of the string '${greeting}' is ${greeting.size()}"
+
+
         // ------------ STOP EDITING HERE  ----------------------
 
         assert result == "The size of the string 'Hello George, how are you?' is 26"
@@ -78,7 +79,8 @@ class Koan01 extends GroovyTestCase {
         // Concatenate the two values of 'right' and 'left' into result to proceed using Groovy syntax
         def result
         // ------------ START EDITING HERE ----------------------
-        result = map['right'] + map['left']
+
+
         // ------------ STOP EDITING HERE  ----------------------
 
         assert result.toCharArray().size() == 16
@@ -99,7 +101,8 @@ class Koan01 extends GroovyTestCase {
         // Add the missing item to the Groovy list. Pay attention to the order of the items.
         // Hint: you can use either Java's add(int, String) or Groovy's plus() method.
         // ------------ START EDITING HERE ----------------------
-        groovyList = groovyList.plus(1, 'Queen')
+
+
         // ------------ STOP EDITING HERE  ----------------------
 
         // Note how Groovy allows you to compare the *content* of the lists
@@ -140,7 +143,8 @@ class Koan01 extends GroovyTestCase {
     private String createMessageForUser(UserService userService) {
         def message
         // ------------ START EDITING HERE ----------------------
-        message = "Hello ${userService.loggedInUser?.firstName ?: 'Anonymous'}!"
+
+
         // ------------ STOP EDITING HERE  ----------------------
 
         // Note how Groovy doesn't require the 'return' keyword! It will simply return the last expression.
