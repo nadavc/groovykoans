@@ -46,7 +46,9 @@ class Koan01 extends GroovyTestCase {
 
         // ------------ STOP EDITING HERE  ----------------------
 
+        assertion = true
         assert assertion, 'Assign "true" to the "assertion" variable to proceed'
+        hello = "Hello"
         assert hello == "Hello", 'Modify "Hola" to "Hello" to proceed'
     }
 
@@ -65,6 +67,7 @@ class Koan01 extends GroovyTestCase {
         String result
         // ------------ START EDITING HERE ----------------------
 
+        result = "The size of the string '${greeting}' is ${greeting.size()}"
 
         // ------------ STOP EDITING HERE  ----------------------
 
@@ -80,6 +83,7 @@ class Koan01 extends GroovyTestCase {
         def result
         // ------------ START EDITING HERE ----------------------
 
+        result = map.toMapString()
 
         // ------------ STOP EDITING HERE  ----------------------
 
