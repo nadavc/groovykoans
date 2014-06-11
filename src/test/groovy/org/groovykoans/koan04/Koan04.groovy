@@ -47,6 +47,7 @@ class Koan04 extends GroovyTestCase {
         def expectedHelloClosureResult
         // ------------ START EDITING HERE ----------------------
 
+        expectedHelloClosureResult = 'Hello from Closure'
 
         // ------------ STOP EDITING HERE  ----------------------
         assert helloClosureResult == expectedHelloClosureResult
@@ -59,6 +60,8 @@ class Koan04 extends GroovyTestCase {
         String expectedHelloRonalda
         // ------------ START EDITING HERE ----------------------
 
+
+        expectedHelloRonalda = 'Hello Ronalda'
 
         // ------------ STOP EDITING HERE  ----------------------
         assert helloRonalda == expectedHelloRonalda
@@ -73,6 +76,7 @@ class Koan04 extends GroovyTestCase {
         def expectedHappyBirthdayGranger
         // ------------ START EDITING HERE ----------------------
 
+        expectedHappyBirthdayGranger = 'Happy Birthday To Hermione'
 
         // ------------ STOP EDITING HERE  ----------------------
         assert happyBirthdayGranger == expectedHappyBirthdayGranger
@@ -81,6 +85,7 @@ class Koan04 extends GroovyTestCase {
         def resultClosure
         // ------------ START EDITING HERE ----------------------
 
+        resultClosure = {int a, int b -> return (a+b)*2 }
 
         // ------------ STOP EDITING HERE  ----------------------
 
@@ -93,7 +98,7 @@ class Koan04 extends GroovyTestCase {
     void test02_MoreClosureIntro() {
         // Now that you're familiar with Closures, you can read about them here:
         // http://groovy.codehaus.org/Closures
-        // http://groovy.codehaus.org/Closures+-+Informal+Guide
+            // http://groovy.codehaus.org/Closures+-+Informal+Guide
         // http://groovy.codehaus.org/Closures+-+Formal+Definition
 
         // So how can we use closures? Everywhere. Groovy adds a lot of convenience methods on top of regular
@@ -114,6 +119,7 @@ class Koan04 extends GroovyTestCase {
         // Let's check that we got the same result (you can use the assertX methods)
         // ------------ START EDITING HERE ----------------------
 
+        groovyResult == javaResult
 
         // ------------ STOP EDITING HERE  ----------------------
 
@@ -130,6 +136,7 @@ class Koan04 extends GroovyTestCase {
         def expectedMonkeyColors = []
         // ------------ START EDITING HERE ----------------------
 
+        expectedMonkeyColors = ['blue', 'red', 'purple']
 
         // ------------ STOP EDITING HERE  ----------------------
         assert monkeyColors == expectedMonkeyColors
@@ -143,6 +150,8 @@ class Koan04 extends GroovyTestCase {
         def prefix = 'src/test/groovy/org/groovykoans/koan04/'
         // ------------ START EDITING HERE ----------------------
 
+        def arquivo = new File("$prefix/exercise.txt")
+        arquivo.filterLine(filteredResult, {String s -> !s.startsWith("#")})
 
         // ------------ STOP EDITING HERE  ----------------------
 
@@ -162,6 +171,10 @@ class Koan04 extends GroovyTestCase {
         def expectedCount
         // ------------ START EDITING HERE ----------------------
 
+        //count() Count the number of occurrences of a substring.
+
+        expectedCount = 3
+
 
         // ------------ STOP EDITING HERE  ----------------------
 
@@ -177,6 +190,7 @@ class Koan04 extends GroovyTestCase {
         def expectedMysteryList
         // ------------ START EDITING HERE ----------------------
 
+        expectedMysteryList = ['Baby', 'Yeah']
 
         // ------------ STOP EDITING HERE  ----------------------
         assert mysteryList == expectedMysteryList

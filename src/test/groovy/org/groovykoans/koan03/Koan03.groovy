@@ -40,6 +40,8 @@ class Koan03 extends GroovyTestCase {
         def groovyFirstName
         // ------------ START EDITING HERE ----------------------
 
+        javaFirstName = javaPerson.getFirstName()
+        groovyFirstName = groovyPerson.firstName
 
         // ------------ STOP EDITING HERE  ----------------------
 
@@ -56,6 +58,9 @@ class Koan03 extends GroovyTestCase {
         def failed = true
         shouldFail (ReadOnlyPropertyException) {
             // ------------ START EDITING HERE ----------------------
+
+
+            person.ssn = '123'
 
 
             // ------------ STOP EDITING HERE  ----------------------
@@ -80,6 +85,7 @@ class Koan03 extends GroovyTestCase {
         def transaction
         // ------------ START EDITING HERE ----------------------
 
+        transaction = new SimpleGroovyBean(data: -30)
 
         // ------------ STOP EDITING HERE  ----------------------
 
@@ -92,7 +98,7 @@ class Koan03 extends GroovyTestCase {
 
         // Once you've learned how to use default values, modify the NameWithDefaultValue
         // class to set name to 'Anonymous' if no name has been specified.
-        def nameObject = new NameWithDefaultValue()
+        def nameObject = new NameWithDefaultValue(name: 'Anonymous')
         assert nameObject.name == 'Anonymous'
     }
 
