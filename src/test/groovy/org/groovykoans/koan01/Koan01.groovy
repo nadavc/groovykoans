@@ -148,6 +148,7 @@ class Koan01 extends GroovyTestCase {
         def message
         // ------------ START EDITING HERE ----------------------
 
+        message = "Hello ${userService.loggedInUser?.firstName ?: 'Anonymous'}!"
 
         // ------------ STOP EDITING HERE  ----------------------
 
