@@ -83,8 +83,7 @@ class Koan01 extends GroovyTestCase {
         def result
         // ------------ START EDITING HERE ----------------------
 
-        result = map.toMapString()
-
+        result = map.right.concat(map.left)
         // ------------ STOP EDITING HERE  ----------------------
 
         assert result.toCharArray().size() == 16
@@ -106,6 +105,7 @@ class Koan01 extends GroovyTestCase {
         // Hint: you can use either Java's add(int, String) or Groovy's plus() method.
         // ------------ START EDITING HERE ----------------------
 
+        groovyList.add(1, "Queen")
 
         // ------------ STOP EDITING HERE  ----------------------
 
