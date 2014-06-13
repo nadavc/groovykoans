@@ -42,6 +42,8 @@ class Koan07 extends GroovyTestCase {
         // ------------ START EDITING HERE ----------------------
 
 
+
+
         // ------------ STOP EDITING HERE  ----------------------
         def result = technologies.findAll { it==~regexp }
 
@@ -61,6 +63,9 @@ class Koan07 extends GroovyTestCase {
         String groovyString
         // ------------ START EDITING HERE ----------------------
 
+        groovyString = """"In Java a multiline string
+        requires using special signs such as $signs
+        and can become difficult to maintain"""
 
         // ------------ STOP EDITING HERE  ----------------------
         assert groovyString == javaString
