@@ -14,8 +14,8 @@
  *  limitations under the License.
  */
 
-package org.groovykoans.koan09
 
-class ConstantsOnMoon {
-    def gravity = 0.1655
+package org.groovykoans.koan13
+
+class Koan13 {
 }
