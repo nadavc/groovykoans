@@ -51,7 +51,7 @@ Follow me on [Twitter][twitter] or [GitHub][github] for updates.
 ## Credits and License ##
 The Koan concept started way back in [Zen][zen] practice. It was then adapted by the good folks of
 [rubykoans.com][rubykoans] and perfected by [Neo4j][neo4j]. The Groovy Koans project is licensed under the
-[Apache 2 License][apache2].
+[WTFPL][wtfpl].
 
 
 Please feel free to leave comments and pull requests :)
@@ -66,4 +66,4 @@ Enjoy!
 [zen]: http://en.wikipedia.org/wiki/K%C5%8Dan
 [rubykoans]: http://rubykoans.org
 [neo4j]: https://github.com/jimwebber/neo4j-tutorial
-[apache2]: http://www.apache.org/licenses/LICENSE-2.0.html
+[wtfpl]: http://www.wtfpl.net/
