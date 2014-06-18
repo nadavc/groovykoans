@@ -41,11 +41,11 @@ To remove the solutions, run `$ ./gradlew removeSolutions` from the root of your
 #### Are there more Koans planned? How will I know? ####
 
 These are the Koans that are currently planned: 
-* Testing
-* Spock framework
 * Embedding Groovy
 * Creating your own DSL
 * Creating your own builder
+* Transformations
+* GPars
 
 Follow me on [Twitter][twitter] or [GitHub][github] for updates.
 
