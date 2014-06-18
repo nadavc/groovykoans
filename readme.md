@@ -18,8 +18,7 @@ to offer.
 #### I like IntelliJ. How can I use it to debug/edit the Koans? ####
 
 * Download and install [IntelliJ IDEA Community Edition][ideac]
-* Run `./gradlew idea` from the root of your unzipped Koans
-* In IDEA, `File -> Open Project` and open the generated `ipr` file
+* In IDEA, `File -> Open Project` and open the `build.gradle` file
 
 #### I am forced to work behind a proxy. Can I still run the Koans? ####
 
