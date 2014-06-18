@@ -18,6 +18,7 @@ package org.groovykoans.koan07
 
 import java.util.regex.Matcher
 import java.util.regex.Pattern
+
 /**
  * Koan07 - Regular Expressions
  *
@@ -42,7 +43,7 @@ class Koan07 extends GroovyTestCase {
         // ------------ START EDITING HERE ----------------------
         regexp = '^G.*[e|s]$'
         // ------------ STOP EDITING HERE  ----------------------
-        def result = technologies.findAll { it==~regexp }
+        def result = technologies.findAll { it ==~ regexp }
 
         assert result == ['Grails', 'Gradle']
     }
@@ -91,7 +92,7 @@ and can become difficult to maintain"""
         // ------------ START EDITING HERE ----------------------
         groovyRegExp = /(?sm)(.*?)\s+(\d+)\s+(\d+)/
         // ------------ STOP EDITING HERE  ----------------------
-        def matcher = text=~groovyRegExp
+        def matcher = text =~ groovyRegExp
         def groovySum = matcher.collect { it[3].toInteger() }.sum()
 
         // ^^ Look how much more concise the Groovy code is! There's even a shorter version ahead...
@@ -122,7 +123,7 @@ and can become difficult to maintain"""
         def names = 'John Lennon, Paul McCartney, George Harrison, Ringo Starr'
         def firstNamesList = []
         // ------------ START EDITING HERE ----------------------
-        def matcher = names=~/(\w+)\s(\w+)/
+        def matcher = names =~ /(\w+)\s(\w+)/
         matcher.each { match, first, last ->
             firstNamesList << first
         }
@@ -136,7 +137,7 @@ and can become difficult to maintain"""
         def number = '4927856234092'
         boolean isNumberValid = false
         // ------------ START EDITING HERE ----------------------
-        isNumberValid = number==~/^4[0-9]{12}(?:[0-9]{3})?$/
+        isNumberValid = number ==~ /^4[0-9]{12}(?:[0-9]{3})?$/
         // ------------ STOP EDITING HERE  ----------------------
         assert isNumberValid, 'Visa number should be valid!'
     }
