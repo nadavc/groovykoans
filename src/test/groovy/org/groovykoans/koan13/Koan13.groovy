@@ -1,5 +1,5 @@
 /*
- * Copyright © 2012-2014 nadavc <https://twitter.com/nadavc>
+ * Copyright (c) 2012-2014 nadavc <https://twitter.com/nadavc>
  * This work is free. You can redistribute it and/or modify it under the
  * terms of the WTFPL, Version 2, as published by Sam Hocevar.
  * See the COPYING file for more details.
@@ -69,8 +69,8 @@ class Koan13 extends Specification {
         // ------------ START EDITING HERE ----------------------
         a << (0..10).collect { [it].multiply(11) }.flatten()    // 0,0,0,0,0,0,0,0,0,0,0,1,1,1,1 ...
         b << (0..10).multiply(11)                               // 0,1,2..10,0,1,2,..10,...
-        c = a * b
         // ------------ STOP EDITING HERE  ----------------------
+        c = a * b
     }
 
     def advancedMultiplication(a, b) {
