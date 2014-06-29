@@ -65,7 +65,7 @@ class Koan13 extends Specification {
         advancedMultiplication(a, b) == c
 
         where:
-        // Hint - this can be done in three lines
+        // Hint - this can be done in two lines
         // ------------ START EDITING HERE ----------------------
         a << (0..10).collect { [it].multiply(11) }.flatten()    // 0,0,0,0,0,0,0,0,0,0,0,1,1,1,1 ...
         b << (0..10).multiply(11)                               // 0,1,2..10,0,1,2,..10,...
