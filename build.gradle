@@ -19,9 +19,9 @@ repositories {
 
 dependencies {
     def groovyComponents = ['groovy', 'groovy-ant', 'groovy-sql', 'groovy-test']
-    groovy groovyComponents.collect { "org.codehaus.groovy:$it:2.0.5" }
-    groovy 'com.h2database:h2:1.3.168'
-    groovy 'org.spockframework:spock-core:0.7-groovy-2.0'
+    testCompile groovyComponents.collect { "org.codehaus.groovy:$it:2.0.5" }
+    testCompile 'com.h2database:h2:1.3.168'
+    testCompile 'org.spockframework:spock-core:0.7-groovy-2.0'
 }
 
 task removeSolutions << {
@@ -70,7 +70,7 @@ gradle.taskGraph.afterTask { task, taskState ->
         return
 
     if (taskState.failure) {
-        String testRepDir = task.testReportDir
+        String testRepDir = project.testReportDir
         Desktop.desktop.browse(new File(testRepDir, 'index.html').toURI())
     } else {
         println "Koan is complete. Well done!"
