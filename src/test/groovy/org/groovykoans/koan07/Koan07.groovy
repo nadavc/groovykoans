@@ -1,23 +1,15 @@
-/**
- * Copyright 2012-2013 The original author or authors
- *
- *  Licensed under the Apache License, Version 2.0 (the "License");
- *  you may not use this file except in compliance with the License.
- *  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- *  Unless required by applicable law or agreed to in writing, software
- *  distributed under the License is distributed on an "AS IS" BASIS,
- *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *  See the License for the specific language governing permissions and
- *  limitations under the License.
+/*
+ * Copyright (c) 2012-2014 nadavc <https://twitter.com/nadavc>
+ * This work is free. You can redistribute it and/or modify it under the
+ * terms of the WTFPL, Version 2, as published by Sam Hocevar.
+ * See the COPYING file for more details.
  */
 
 package org.groovykoans.koan07
 
 import java.util.regex.Matcher
 import java.util.regex.Pattern
+
 /**
  * Koan07 - Regular Expressions
  *
@@ -45,7 +37,7 @@ class Koan07 extends GroovyTestCase {
 
 
         // ------------ STOP EDITING HERE  ----------------------
-        def result = technologies.findAll { it==~regexp }
+        def result = technologies.findAll { it ==~ regexp }
 
         assert result == ['Grails', 'Gradle']
     }
@@ -97,7 +89,7 @@ class Koan07 extends GroovyTestCase {
 
 
         // ------------ STOP EDITING HERE  ----------------------
-        def matcher = text=~groovyRegExp
+        def matcher = text =~ groovyRegExp
         def groovySum = matcher.collect { it[3].toInteger() }.sum()
 
         // ^^ Look how much more concise the Groovy code is! There's even a shorter version ahead...
@@ -129,8 +121,17 @@ class Koan07 extends GroovyTestCase {
         def names = 'John Lennon, Paul McCartney, George Harrison, Ringo Starr'
         def firstNamesList = []
         // ------------ START EDITING HERE ----------------------
+<<<<<<< HEAD
 
 
+=======
+        def matcher = names =~ /(\w+)\s(\w+)/
+        matcher.each { match, first, last ->
+            firstNamesList << first
+        }
+        // Note - there are better ways to achieve the same in Groovy (String.eachMatch, Collections.collect, etc)
+        // but that's not the point of this specific exercise :)
+>>>>>>> upstream/master
         // ------------ STOP EDITING HERE  ----------------------
         assert firstNamesList == ['John', 'Paul', 'George', 'Ringo']
 
@@ -139,8 +140,12 @@ class Koan07 extends GroovyTestCase {
         def number = '4927856234092'
         boolean isNumberValid = false
         // ------------ START EDITING HERE ----------------------
+<<<<<<< HEAD
 
 
+=======
+        isNumberValid = number ==~ /^4[0-9]{12}(?:[0-9]{3})?$/
+>>>>>>> upstream/master
         // ------------ STOP EDITING HERE  ----------------------
         assert isNumberValid, 'Visa number should be valid!'
     }

@@ -18,8 +18,7 @@ to offer.
 #### I like IntelliJ. How can I use it to debug/edit the Koans? ####
 
 * Download and install [IntelliJ IDEA Community Edition][ideac]
-* Run `./gradlew idea` from the root of your unzipped Koans
-* In IDEA, `File -> Open Project` and open the generated `ipr` file
+* In IDEA, `File -> Open Project` and open the `build.gradle` file
 
 #### I am forced to work behind a proxy. Can I still run the Koans? ####
 
@@ -41,18 +40,18 @@ To remove the solutions, run `$ ./gradlew removeSolutions` from the root of your
 #### Are there more Koans planned? How will I know? ####
 
 These are the Koans that are currently planned: 
-* Testing
-* Spock framework
 * Embedding Groovy
 * Creating your own DSL
 * Creating your own builder
+* Transformations
+* GPars
 
 Follow me on [Twitter][twitter] or [GitHub][github] for updates.
 
 ## Credits and License ##
 The Koan concept started way back in [Zen][zen] practice. It was then adapted by the good folks of
 [rubykoans.com][rubykoans] and perfected by [Neo4j][neo4j]. The Groovy Koans project is licensed under the
-[Apache 2 License][apache2].
+[WTFPL][wtfpl].
 
 
 Please feel free to leave comments and pull requests :)
@@ -67,4 +66,4 @@ Enjoy!
 [zen]: http://en.wikipedia.org/wiki/K%C5%8Dan
 [rubykoans]: http://rubykoans.org
 [neo4j]: https://github.com/jimwebber/neo4j-tutorial
-[apache2]: http://www.apache.org/licenses/LICENSE-2.0.html
+[wtfpl]: http://www.wtfpl.net/
