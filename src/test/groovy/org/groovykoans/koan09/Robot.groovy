@@ -11,12 +11,10 @@ import org.codehaus.groovy.runtime.InvokerHelper
 
 class Robot {
     // ------------ START EDITING HERE ----------------------
-    def x = 0, y = 0
 
-    void left() {
-        x--
-    }
 
+<<<<<<< HEAD
+=======
     void right() {
         x++
     }
@@ -37,5 +35,6 @@ class Robot {
         }
         null
     }
+>>>>>>> upstream/master
     // ------------ STOP EDITING HERE  ----------------------
 }

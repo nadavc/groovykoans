@@ -34,13 +34,15 @@ class Koan06 extends GroovyTestCase {
         // Groovy-fy the above code, using StringBuilder and with() to get the same result in Groovy
         String groovyResult
         // ------------ START EDITING HERE ----------------------
+
         groovyResult = new StringBuilder().with {
-            append(/roses are #FF0000\n/)
-            append(/violets are #0000FF\n/)
-            append(/all my base\n/)
-            append(/are belong to you\n/)
+            append("roses are #F0000\\n")
+            append("violets are #0000FF\\n")
+            append("all my base\\n")
+            append("are belong to you\\n")
             return it.toString()
         }
+
         // ------------ STOP EDITING HERE  ----------------------
         assert groovyResult == javaResult
     }
@@ -55,7 +57,10 @@ class Koan06 extends GroovyTestCase {
         def differentTypes = [1, 'String', "GString", 'a', 'Another string', 0]
         def uniqueTypes = []
         // ------------ START EDITING HERE ----------------------
-        uniqueTypes = differentTypes.collect { it.class }.unique()
+
+
+        uniqueTypes = differentTypes.collect({it.class}).unique()
+
         // ------------ STOP EDITING HERE  ----------------------
         assert uniqueTypes == [Integer, String]
     }
@@ -68,10 +73,10 @@ class Koan06 extends GroovyTestCase {
         // under the src directory
         int count = 0
         // ------------ START EDITING HERE ----------------------
-        new File('src').eachFileRecurse { File file ->
-            if (!file.isDirectory() && file.text.contains('Lorem'))
-                count++
-        }
+
+        new File('src').eachFileRecurse {File file  -> if (file.text.contains('Lorem')) count++ }
+
+
         // ------------ STOP EDITING HERE  ----------------------
         assert count == 3
 
@@ -82,11 +87,9 @@ class Koan06 extends GroovyTestCase {
         // range objects, store all the prime numbers between 200 and 250 in the target variable
         def primesBetween200And250 = []
         // ------------ START EDITING HERE ----------------------
-        primesBetween200And250 = (200..250).findAll { candidate ->
-            (2..<candidate).every { divisor ->
-                candidate % divisor != 0
-            }
-        }
+
+
+
         // ------------ STOP EDITING HERE  ----------------------
         assert primesBetween200And250 == [211, 223, 227, 229, 233, 239, 241]
 
