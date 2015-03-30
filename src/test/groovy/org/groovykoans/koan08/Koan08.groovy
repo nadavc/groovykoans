@@ -34,7 +34,7 @@ class Koan08 extends GroovyTestCase {
                     result = input / 2
                     break
                 case ~/.*ee/:
-                    result = "${input[0..input.size() - 3]}ey"
+                    result = "${input[0..-3]}ey"
                     break;
                 default:
                     result = input
