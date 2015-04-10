@@ -14,3 +14,5 @@ idea.project {
         }
     }
 }
+
+tasks.remove(cleanIdeaWorkspace)

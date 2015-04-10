@@ -34,6 +34,8 @@ task removeSolutions << {
     }
     println "Removed $solutionsRemoved solutions from Koans. Good luck!"
 }
+removeSolutions.group = 'Koan'
+removeSolutions.description = 'Removes the solutions from all Koans, so you can start fresh!'
 
 // Adapted from http://www.practicalgradle.org/blog/2011/01/convenient-test-execution-with-camel-case-support/
 tasks.addRule('Pattern: koan<Number>: Runs a single Koan') { String taskName ->
@@ -54,6 +56,7 @@ tasks.addRule('Pattern: koan<Number>: Runs a single Koan') { String taskName ->
 task wrapper(type: Wrapper) {
     gradleVersion = '2.3'
 }
+tasks.remove(wrapper)
 
 // show welcome message
 task sayHello << {
