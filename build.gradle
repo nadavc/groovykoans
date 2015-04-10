@@ -10,6 +10,7 @@ import java.util.List
 
 apply plugin: 'groovy'
 apply from: 'gradle/idea.gradle'
+apply from: 'gradle/eclipse.gradle'
 
 version = '0.5'
 

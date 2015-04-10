@@ -20,6 +20,12 @@ to offer.
 * Download and install [IntelliJ IDEA Community Edition][ideac]
 * In IDEA, `File -> Open Project` and open the `build.gradle` file
 
+#### I like Eclipse. How can I use it to debug/edit the Koans? ####
+
+* Execute `./gradlew eclipse`
+* Download and install [Eclipise IDE for Java Developers][eclipse]
+* In Eclipse, `File -> Import...`, `Existing Projects into Workspace`, and select the project directory
+
 #### I am forced to work behind a proxy. Can I still run the Koans? ####
 
 The `gradlew` script downloads Groovy and Gradle for you, so you don't have to set up anything by yourself.
@@ -61,6 +67,7 @@ Enjoy!
 [jdk]: http://www.oracle.com/technetwork/java/javase/downloads/index.html
 [zip]: https://github.com/nadavc/groovykoans/archive/master.zip
 [ideac]: http://www.jetbrains.com/idea/download/
+[eclipse]: https://eclipse.org/downloads/
 [twitter]: http://twitter.com/nadavc
 [github]: http://github.com/nadavc
 [zen]: http://en.wikipedia.org/wiki/K%C5%8Dan
