@@ -29,7 +29,7 @@ class Koan02 extends GroovyTestCase {
     }
 
     void test02_Collections() {
-        // Lists and map evaluate to false if they're empty. Otherwise, they evaluate to true
+        // Lists and maps evaluate to false if they're empty.  Otherwise, they evaluate to true.
         Map<String, String> map = [:]
         List<String> list = ['item']
 
