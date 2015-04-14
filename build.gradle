@@ -25,17 +25,19 @@ dependencies {
     testCompile 'org.spockframework:spock-core:1.0-groovy-2.4'
 }
 
-task removeSolutions << {
-    def solutionsRemoved = 0
-    def solutionRegex = $/(?sm)(// -{12} START EDITING HERE -{22})(.*?)(\s+// -{12} STOP EDITING HERE  -{22})/$
-    sourceSets.test.allSource.files.each { File sourceFile ->
-        solutionsRemoved += (sourceFile.text =~ solutionRegex).count
-        sourceFile.text = sourceFile.text.replaceAll(solutionRegex, '$1\n\n$3')
+task removeSolutions {
+    description = 'Removes the solutions from all Koans, so you can start fresh!'
+
+    doLast {
+        def solutionsRemoved = 0
+        def solutionRegex = $/(?sm)(// -{12} START EDITING HERE -{22})(.*?)(\s+// -{12} STOP EDITING HERE  -{22})/$
+        sourceSets.test.allSource.files.each { File sourceFile ->
+            solutionsRemoved += (sourceFile.text =~ solutionRegex).count
+            sourceFile.text = sourceFile.text.replaceAll(solutionRegex, '$1\n\n$3')
+        }
+        println "Removed $solutionsRemoved solutions from Koans. Good luck!"
     }
-    println "Removed $solutionsRemoved solutions from Koans. Good luck!"
 }
-removeSolutions.group = 'Koan'
-removeSolutions.description = 'Removes the solutions from all Koans, so you can start fresh!'
 
 // Adapted from http://www.practicalgradle.org/blog/2011/01/convenient-test-execution-with-camel-case-support/
 tasks.addRule('Pattern: koan<Number>: Runs a single Koan') { String taskName ->
@@ -56,7 +58,6 @@ tasks.addRule('Pattern: koan<Number>: Runs a single Koan') { String taskName ->
 task wrapper(type: Wrapper) {
     gradleVersion = '2.3'
 }
-tasks.remove(wrapper)
 
 // show welcome message
 task sayHello << {
