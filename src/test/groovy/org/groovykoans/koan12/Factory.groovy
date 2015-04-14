@@ -13,7 +13,7 @@ class Factory {
     def worker;
 
     // defaults to a Hard (and slow) Worker implementation
-    Factory(worker = new HardWorker(), def numbers) {
+    Factory(worker = new HardWorker(), numbers = 1..10) {
         this.numbers = numbers;
         this.worker = worker;
     }

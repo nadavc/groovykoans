@@ -11,8 +11,8 @@ class StaticFactory {
 
     List<Integer> numbers
 
-    public static Worker getWorker() {
-        new HardWorker()
+    static Worker getWorker() {
+        return new HardWorker()
     }
 
     List<Integer> work() {

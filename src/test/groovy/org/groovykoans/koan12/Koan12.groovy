@@ -44,12 +44,12 @@ class Koan12 extends GroovyTestCase {
 
         // Use the Expando class (remember Koan09?) to stub the hard worker with a quick one by
         // adding a work() method to it
-        Factory factory = new Factory([1, 2])
+        Factory factory = new Factory()
         long startTime = System.currentTimeMillis()
         // ------------ START EDITING HERE ----------------------
         def stub = new Expando();
         stub.work = { number -> number + 10 }
-        factory.setWorker(stub)
+        factory.worker = stub
         // ------------ STOP EDITING HERE  ----------------------
         factory.work()
         long endTime = System.currentTimeMillis()
@@ -59,15 +59,14 @@ class Koan12 extends GroovyTestCase {
         // the class being tested uses a static call to create the worker.
         // How does Groovy address this? - Try http://groovy.codehaus.org/Mocking+Static+Methods+using+Groovy
         // Try to experiment with Map Coercion too - http://groovy.codehaus.org/Groovy+Mocks
-        def staticFactory = new StaticFactory(numbers: [2, 3])
         startTime = System.currentTimeMillis()
         // ------------ START EDITING HERE ----------------------
         Worker worker = { number -> number + 10 } as Worker
-        StaticFactory.metaClass.'static'.getWorker = { worker }
+        StaticFactory.metaClass.static.getWorker = { worker }
         // ------------ STOP EDITING HERE  ----------------------
-        staticFactory.work()
+       new StaticFactory(numbers: 1..10).work()
         endTime = System.currentTimeMillis()
-        assert endTime - startTime < 2000
+        assert endTime - startTime < 3000
 
     }
 
