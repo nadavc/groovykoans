@@ -15,9 +15,9 @@ import java.util.regex.Pattern
  *
  * Resource list:
  *   * http://www.vogella.com/articles/JavaRegularExpressions/article.html
- *   * http://groovy.codehaus.org/Strings+and+GString#StringsandGString-Multi-linestrings
- *   * http://groovy.codehaus.org/Strings+and+GString#StringsandGString-SlashyStringliterals
- *   * http://groovy.codehaus.org/Regular+Expressions
+ *   * http://www.groovy-lang.org/Strings+and+GString#StringsandGString-Multi-linestrings
+ *   * http://www.groovy-lang.org/Strings+and+GString#StringsandGString-SlashyStringliterals
+ *   * http://www.groovy-lang.org/Regular+Expressions
  *   * http://naleid.com/blog/2009/04/07/groovy-161-released-with-new-find-and-findall-regexp-methods-on-string/
  *   * http://docs.codehaus.org/display/GROOVY/Documenting+Regular+Expressions+in+Groovy
  */
@@ -41,7 +41,7 @@ class Koan07 extends GroovyTestCase {
 
     void test02_MultilineStrings() {
         // With Groovy it's possible to declare multiline strings using either ''' or """ (Multiline GString).
-        // More info at http://groovy.codehaus.org/Strings+and+GString#StringsandGString-Multi-linestrings
+        // More info at http://www.groovy-lang.org/Strings+and+GString#StringsandGString-Multi-linestrings
 
         String signs = '+, \\, and others'
 
@@ -61,7 +61,7 @@ and can become difficult to maintain"""
     void test03_SlashyStrings() {
         // The other type of String declaration is called Slashy strings. They're especially useful for
         // regular expressions. Read about them at
-        // http://groovy.codehaus.org/Strings+and+GString#StringsandGString-SlashyStringliterals
+        // http://www.groovy-lang.org/Strings+and+GString#StringsandGString-SlashyStringliterals
 
         // Suppose we have the following text:
         def text = '''|Item          # Sold  Leftover
@@ -95,7 +95,7 @@ and can become difficult to maintain"""
         // ~str (tilde) : creates a Pattern object from a string. Equivalent to Pattern.compile(str)
         // str =~ pattern : creates a Matcher from a regex and a string. Same as Pattern.compile(pattern).matcher(str)
         // str ==~ pattern : returns a boolean if pattern matches str. Same as Pattern.matches(pattern, str)
-        // More docs at http://groovy.codehaus.org/Regular+Expressions
+        // More docs at http://www.groovy-lang.org/Regular+Expressions
 
         // This is how a Pattern object is defined in Java for an arbitrary phone number format
         // (xxx xxxx or xxxxxxx or xxx,xxxx)

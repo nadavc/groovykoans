@@ -10,11 +10,11 @@ package org.groovykoans.koan12
  * Koans12 - Built-in testing support in Groovy
  *
  * Reading list:
- *   * http://groovy.codehaus.org/api/groovy/util/GroovyTestCase.html
+ *   * http://www.groovy-lang.org/api/groovy/util/GroovyTestCase.html
  *   * http://jetlet.blogspot.com/2010/06/shouldfail-in-groovy-testing.html
- *   * http://groovy.codehaus.org/Unit+Testing
- *   * http://groovy.codehaus.org/Mocking+Static+Methods+using+Groovy
- *   * http://groovy.codehaus.org/Groovy+Mocks
+ *   * http://www.groovy-lang.org/Unit+Testing
+ *   * http://www.groovy-lang.org/Mocking+Static+Methods+using+Groovy
+ *   * http://www.groovy-lang.org/Groovy+Mocks
  *
  *
  */
@@ -57,8 +57,8 @@ class Koan12 extends GroovyTestCase {
 
         // Great! Now let's assume you cannot alter the worker member because
         // the class being tested uses a static call to create the worker.
-        // How does Groovy address this? - Try http://groovy.codehaus.org/Mocking+Static+Methods+using+Groovy
-        // Try to experiment with Map Coercion too - http://groovy.codehaus.org/Groovy+Mocks
+        // How does Groovy address this? - Try http://www.groovy-lang.org/Mocking+Static+Methods+using+Groovy
+        // Try to experiment with Map Coercion too - http://www.groovy-lang.org/Groovy+Mocks
         startTime = System.currentTimeMillis()
         // ------------ START EDITING HERE ----------------------
         Worker worker = { number -> number + 10 } as Worker

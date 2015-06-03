@@ -13,9 +13,9 @@ package org.groovykoans.koan09
  * Reading list:
  *   * http://mrhaki.blogspot.com/2009/10/groovy-goodness-expando-as-dynamic-bean.html
  *   * http://mrhaki.blogspot.com/2009/11/groovy-goodness-intercept-methods-with.html
- *   * http://groovy.codehaus.org/Closures#Closures-thisowneranddelegate
+ *   * http://www.groovy-lang.org/Closures#Closures-thisowneranddelegate
  *   * http://stackoverflow.com/questions/8120949/what-does-delegate-mean-in-groovy/8121750#8121750
- *   * http://groovy.codehaus.org/Using+invokeMethod+and+getProperty
+ *   * http://www.groovy-lang.org/Using+invokeMethod+and+getProperty
  *   * http://mrhaki.blogspot.com/2009/12/groovy-goodness-adding-or-overriding.html
  *   * http://www.codinghorror.com/blog/2007/02/why-cant-programmers-program.html,
  *
@@ -66,7 +66,7 @@ class Koan09 extends GroovyTestCase {
 
     void test03_ThisDelegateAndOwner() {
         // Let's get to know the difference between this, owner, and delegate.
-        // Some reading is available here: http://groovy.codehaus.org/Closures#Closures-thisowneranddelegate
+        // Some reading is available here: http://www.groovy-lang.org/Closures#Closures-thisowneranddelegate
 
         // In Java, we only have the 'this' keyword. It returns the current instance. Groovy does exactly the same.
         def expectedThisClassName
@@ -138,7 +138,7 @@ class Koan09 extends GroovyTestCase {
         assert robot.y == -1
 
         // Wouldn't it be nicer if we could create shorthand versions for combo moves? For example, goLeftLeftRightDown()?
-        // Read about invokeMethod() here: http://groovy.codehaus.org/Using+invokeMethod+and+getProperty
+        // Read about invokeMethod() here: http://www.groovy-lang.org/Using+invokeMethod+and+getProperty
         // invokeMethod() allows you to intercept all method calls, even if the method doesn't exist.
 
         // Using invokeMethod(), handle every possible goXYZ combination... Regular expressions will come in handy.
