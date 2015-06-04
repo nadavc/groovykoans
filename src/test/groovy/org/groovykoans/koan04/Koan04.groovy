@@ -11,12 +11,10 @@ package org.groovykoans.koan04
  * Koan04 - Closures
  *
  * Resource list:
- *   http://www.groovy-lang.org/Closures
- *   http://www.groovy-lang.org/Closures+-+Informal+Guide
- *   http://www.groovy-lang.org/Closures+-+Formal+Definition
- *   http://www.groovy-lang.org/groovy-jdk/java/lang/String.html#eachMatch(java.lang.String, groovy.lang.Closure)
- *   http://www.groovy-lang.org/groovy-jdk/java/io/File.html
- *   http://www.groovy-lang.org/groovy-jdk/java/lang/String.html
+ *   http://docs.groovy-lang.org/latest/html/documentation/index.html#_closures
+ *   http://docs.groovy-lang.org/latest/html/groovy-jdk/java/lang/String.html#eachMatch(java.lang.String, groovy.lang.Closure)
+ *   http://docs.groovy-lang.org/latest/html/groovy-jdk/java/io/File.html
+ *   http://docs.groovy-lang.org/latest/html/groovy-jdk/java/lang/String.html
  */
 class Koan04 extends GroovyTestCase {
 
@@ -79,9 +77,7 @@ class Koan04 extends GroovyTestCase {
 
     void test02_MoreClosureIntro() {
         // Now that you're familiar with Closures, you can read about them here:
-        // http://www.groovy-lang.org/Closures
-        // http://www.groovy-lang.org/Closures+-+Informal+Guide
-        // http://www.groovy-lang.org/Closures+-+Formal+Definition
+        // http://docs.groovy-lang.org/latest/html/documentation/index.html#_closures
 
         // So how can we use closures? Everywhere. Groovy adds a lot of convenience methods on top of regular
         // Java constructs.
@@ -107,7 +103,7 @@ class Koan04 extends GroovyTestCase {
         // last parameter, it can be separated from the rest of the parameters as such:
 
         def monkeyColors = []
-        // http://www.groovy-lang.org/groovy-jdk/java/lang/String.html#eachMatch(java.lang.String, groovy.lang.Closure)
+        // http://docs.groovy-lang.org/latest/html/groovy-jdk/java/lang/String.html#eachMatch(java.lang.String, groovy.lang.Closure)
         "I have seen blue monkeys, red monkeys, and purple monkeys".eachMatch('(\\w+) monkeys') { entireMatch, color ->
             monkeyColors.add(color)
         }
@@ -120,7 +116,7 @@ class Koan04 extends GroovyTestCase {
         assert monkeyColors == expectedMonkeyColors
 
         // Okay. Time for an exercise. Have a look at Groovy's additions on top of the File class by reading
-        // docs at http://www.groovy-lang.org/groovy-jdk/java/io/File.html
+        // docs at http://docs.groovy-lang.org/latest/html/groovy-jdk/java/io/File.html
         // Once done, read the content of "exercise.txt" (it's right next to the file you're viewing) into a
         // StringWriter but leave out the lines that begin with #.
 
@@ -145,7 +141,7 @@ class Koan04 extends GroovyTestCase {
         def count = "That ain't no woman! It's a man, man!".count 'man'
 
         // Can you guess what count() does? If not, look it up in
-        // http://www.groovy-lang.org/groovy-jdk/java/lang/String.html
+        // http://docs.groovy-lang.org/latest/html/groovy-jdk/java/lang/String.html
         def expectedCount
         // ------------ START EDITING HERE ----------------------
         expectedCount = 3

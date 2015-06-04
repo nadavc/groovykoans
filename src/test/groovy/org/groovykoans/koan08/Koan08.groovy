@@ -11,14 +11,14 @@ package org.groovykoans.koan08
  * Koan08 - More goodness
  *
  * Resource list:
- *   * http://www.groovy-lang.org/Logical+Branching#LogicalBranching-switchstatement
+ *   * http://docs.groovy-lang.org/latest/html/documentation/index.html#_switch_case
  */
 class Koan08 extends GroovyTestCase {
 
     void test01_SwitchStatements() {
         // Some people consider switch-case clauses to be a code smell because the same behavior can be
         // achieved using polymorphism. Having said that, let's look at what Groovy has to offer.
-        // Have a read here: http://www.groovy-lang.org/Logical+Branching#LogicalBranching-switchstatement
+        // Have a read here: http://docs.groovy-lang.org/latest/html/documentation/index.html#_switch_case
 
         // Using a switch statement, create a closure that accepts input (could be string or number) and returns
         // the following:
@@ -92,7 +92,7 @@ class Koan08 extends GroovyTestCase {
     void test03_MultiAssignment() {
         // Sometimes you want to return more than one variable from a method. Yes, you could do it with an enclosing
         // class, but that would be an overkill. Groovy calls it Multiple Assignments.
-        // http://www.groovy-lang.org/Multiple+Assignment
+        // http://docs.groovy-lang.org/latest/html/documentation/index.html#_multiple_assignment
 
         // Create a closure that returns two random integers between 0 (inclusive) to maxInt (exclusive)
         def generateTwoRandomInts = { int maxInt ->
@@ -103,7 +103,7 @@ class Koan08 extends GroovyTestCase {
         }
 
         def (intA, intB) = generateTwoRandomInts(10)
-        // Notice the half open notation for ranges... (http://www.groovy-lang.org/Collections#Collections-Ranges)
+        // Notice the half open notation for ranges... (http://groovy-lang.org/groovy-dev-kit.html#_working_with_collections)
         assert intA in 0..<10
         assert intB in 0..<10
     }

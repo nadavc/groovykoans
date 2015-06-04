@@ -11,9 +11,9 @@ package org.groovykoans.koan05
  * Koan05 - Iterations in Groovy
  *
  * Resource list:
- *  http://www.groovy-lang.org/groovy-jdk/java/util/Map.html#each(groovy.lang.Closure)
- *  http://www.groovy-lang.org/Collections#Collections-Ranges
- *  http://www.groovy-lang.org/groovy-jdk/java/lang/Object.html#eachWithIndex(groovy.lang.Closure)
+ *  http://docs.groovy-lang.org/latest/html/groovy-jdk/java/util/Map.html#each(groovy.lang.Closure)
+ *  http://groovy-lang.org/groovy-dev-kit.html#_working_with_collections
+ *  http://docs.groovy-lang.org/latest/html/groovy-jdk/java/lang/Object.html#eachWithIndex(groovy.lang.Closure)
  */
 class Koan05 extends GroovyTestCase {
 
@@ -38,7 +38,7 @@ class Koan05 extends GroovyTestCase {
         }
 
         // How would you do this in Groovy?
-        // http://www.groovy-lang.org/groovy-jdk/java/util/Map.html#each(groovy.lang.Closure)
+        // http://docs.groovy-lang.org/latest/html/groovy-jdk/java/util/Map.html#each(groovy.lang.Closure)
         def idListResult = []
         // ------------ START EDITING HERE ----------------------
         idToNameMap.each { key, value ->
@@ -50,7 +50,7 @@ class Koan05 extends GroovyTestCase {
 
     void test02_Ranges() {
         // Groovy allows you to create quick lists for sequential values. For example 5..10 or 'a'..'d'
-        // Read at http://www.groovy-lang.org/Collections#Collections-Ranges
+        // Read at http://groovy-lang.org/groovy-dev-kit.html#_working_with_collections
 
         // A simple example:
         def range = 5..10
@@ -67,7 +67,7 @@ class Koan05 extends GroovyTestCase {
         // Just as you can iterate over lists, you can iterate over ranges.
 
         // Create a list of all odd letters (a, c, e, ... etc) using ranges
-        // http://www.groovy-lang.org/groovy-jdk/java/lang/Object.html#eachWithIndex(groovy.lang.Closure)
+        // http://docs.groovy-lang.org/latest/html/groovy-jdk/java/lang/Object.html#eachWithIndex(groovy.lang.Closure)
         def rangeResult = []
         // ------------ START EDITING HERE ----------------------
         def range = 'a'..'z'

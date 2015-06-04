@@ -11,18 +11,18 @@ package org.groovykoans.koan01
  * Koan01 - Groovy 101
  *
  * Resource list:
- *   http://www.groovy-lang.org/api/groovy/util/GroovyTestCase.html
- *   http://www.groovy-lang.org/Strings+and+GString#StringsandGString-GStrings
- *   http://www.groovy-lang.org/JN1035-Maps
- *   http://www.groovy-lang.org/JN1015-Collections
- *   http://www.groovy-lang.org/groovy-jdk/java/util/List.html
- *   http://www.groovy-lang.org/Operators#Operators-ElvisOperator
+ *   http://docs.groovy-lang.org/latest/html/api/groovy/util/GroovyTestCase.html
+ *   http://docs.groovy-lang.org/latest/html/documentation/index.html#all-strings
+ *   http://groovy-lang.org/groovy-dev-kit.html#_working_with_collections
+ *   http://groovy-lang.org/groovy-dev-kit.html#_working_with_collections
+ *   http://docs.groovy-lang.org/latest/html/groovy-jdk/java/util/List.html
+ *   http://docs.groovy-lang.org/latest/html/documentation/index.html#groovy-operators
  */
 class Koan01 extends GroovyTestCase {
 
     void test01_AssertionsAndSomeSyntax() {
         // Groovy introduces the GroovyTestCase for testing. We are using it as the base class for our unit tests.
-        // Docs for GroovyTestCase can be found at: http://www.groovy-lang.org/api/groovy/util/GroovyTestCase.html
+        // Docs for GroovyTestCase can be found at: http://docs.groovy-lang.org/latest/html/api/groovy/util/GroovyTestCase.html
 
         // Groovy can be used solely with Java syntax. You have full control over what facet of Groovy you want.
 
@@ -45,7 +45,7 @@ class Koan01 extends GroovyTestCase {
     void test02_GStrings() {
         // Groovy allows you to use either regular quotes (') or double-quotes (") for String declarations.
         // The difference is that double-quotes create a GString, which is a super-powered String.
-        // For docs about GStrings, see http://www.groovy-lang.org/Strings+and+GString#StringsandGString-GStrings
+        // For docs about GStrings, see http://docs.groovy-lang.org/latest/html/documentation/index.html#all-strings
 
         // GStrings allow you to use the ${} syntax within them. The ${} can contain any valid Groovy expression.
         def name = 'George'
@@ -63,7 +63,7 @@ class Koan01 extends GroovyTestCase {
 
     void test03_MapsInGroovy() {
         // Maps are also special citizens in Groovyland.
-        // Docs can be found here: http://www.groovy-lang.org/JN1035-Maps
+        // Docs can be found here: http://groovy-lang.org/groovy-dev-kit.html#_working_with_collections
         def map = [right: 'derecha', left: 'izquierda']
 
         // Concatenate the two values of 'right' and 'left' into result to proceed using Groovy syntax
@@ -83,8 +83,8 @@ class Koan01 extends GroovyTestCase {
         javaList.add("Prince");
 
         // In Groovy, this is simplified to:
-        // (See http://www.groovy-lang.org/JN1015-Collections
-        // and http://www.groovy-lang.org/groovy-jdk/java/util/List.html)
+        // (See http://groovy-lang.org/groovy-dev-kit.html#_working_with_collections
+        // and http://docs.groovy-lang.org/latest/html/groovy-jdk/java/util/List.html)
         def groovyList = ['King', 'Prince']
 
         // Add the missing item to the Groovy list. Pay attention to the order of the items.
@@ -104,7 +104,7 @@ class Koan01 extends GroovyTestCase {
         UserService userServiceWithoutLoggedInUser = [getLoggedInUser: { null }] as UserService
 
         // Groovy introduces two convenient operators for dealing with nulls: elvis (?:) and safe navigation (?.)
-        // Read all about it at http://www.groovy-lang.org/Operators#Operators-ElvisOperator
+        // Read all about it at http://docs.groovy-lang.org/latest/html/documentation/index.html#groovy-operators
 
         // Assume we have a User object that may or may not contain a first name and an address.
         // In Java, we could end up with the following code:
