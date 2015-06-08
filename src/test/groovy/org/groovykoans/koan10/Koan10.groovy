@@ -13,15 +13,15 @@ import groovy.xml.MarkupBuilder
  * Koan10 - Slurpers and Builders
  *
  * Reading list:
- *  * http://groovy.codehaus.org/Reading+XML+using+Groovy's+XmlSlurper
- *  * http://groovy.codehaus.org/api/groovy/util/XmlSlurper.html
- *  * http://groovy.codehaus.org/groovy-jdk/java/util/Collection.html#sort(groovy.lang.Closure)
+ *  * http://groovy-lang.org/processing-xml.html
+ *  * http://docs.groovy-lang.org/latest/html/api/groovy/util/XmlSlurper.html
+ *  * http://docs.groovy-lang.org/latest/html/groovy-jdk/java/util/Collection.html#sort(groovy.lang.Closure)
  *  * http://mrhaki.blogspot.com/2009/08/groovy-goodness-spaceship-operator.html
- *  * http://groovy.codehaus.org/Creating+XML+using+Groovy's+MarkupBuilder
- *  * http://groovy.codehaus.org/api/groovy/xml/MarkupBuilder.html
+ *  * http://groovy-lang.org/processing-xml.html#_markupbuilder
+ *  * http://docs.groovy-lang.org/latest/html/api/groovy/xml/MarkupBuilder.html
  *  * http://stackoverflow.com/questions/5936003/write-html-file-using-java
  *  * http://supportweb.cs.bham.ac.uk/docs/tutorials/docsystem/build/tutorials/ant/ant.html
- *  * http://groovy.codehaus.org/Using+Ant+from+Groovy
+ *  * http://docs.groovy-lang.org/latest/html/documentation/ant-builder.html
  *  * http://ant.apache.org/manual/Tasks/copy.html
  *  * http://ant.apache.org/manual/Tasks/checksum.html
  */
@@ -29,8 +29,8 @@ class Koan10 extends GroovyTestCase {
 
     void test01_XmlSlurpersReader() {
         // Time to learn about the built-in magic that Groovy brings to the table.
-        // Using the reference at http://groovy.codehaus.org/Reading+XML+using+Groovy's+XmlSlurper and
-        // http://groovy.codehaus.org/api/groovy/util/XmlSlurper.html, read the content of movies.xml
+        // Using the reference at http://groovy-lang.org/processing-xml.html and
+        // http://docs.groovy-lang.org/latest/html/api/groovy/util/XmlSlurper.html, read the content of movies.xml
         // and find out how many movies are listed.
         def movieCount
         // ------------ START EDITING HERE ----------------------
@@ -63,7 +63,7 @@ class Koan10 extends GroovyTestCase {
     void test02_XmlSlurpersReader2() {
         // Using your new skills, return a list of movies, sorted by year (and alphabetically within the same year)
         // sort() and Spaceship operator can come in handy:
-        // http://groovy.codehaus.org/groovy-jdk/java/util/Collection.html#sort(groovy.lang.Closure)
+        // http://docs.groovy-lang.org/latest/html/groovy-jdk/java/util/Collection.html#sort(groovy.lang.Closure)
         // http://mrhaki.blogspot.com/2009/08/groovy-goodness-spaceship-operator.html
 
         List<String> sortedList = []
@@ -82,8 +82,8 @@ class Koan10 extends GroovyTestCase {
 
     void test03_XmlMarkupBuilder1() {
         // Groovy's MarkupBuilder allows you to create tree structures very easily.
-        // Read here: http://groovy.codehaus.org/Creating+XML+using+Groovy's+MarkupBuilder
-        // And here: http://groovy.codehaus.org/api/groovy/xml/MarkupBuilder.html
+        // Read here: http://groovy-lang.org/processing-xml.html#_markupbuilder
+        // And here: http://docs.groovy-lang.org/latest/html/api/groovy/xml/MarkupBuilder.html
 
         // Let's try to create the following HTML in code:
         // <html>
@@ -157,7 +157,7 @@ class Koan10 extends GroovyTestCase {
         // file manipulation, communication, and others. Read the basics here:
         // http://supportweb.cs.bham.ac.uk/docs/tutorials/docsystem/build/tutorials/ant/ant.html
 
-        // So how does Groovy support Ant? With AntBuilder: http://groovy.codehaus.org/Using+Ant+from+Groovy
+        // So how does Groovy support Ant? With AntBuilder: http://docs.groovy-lang.org/latest/html/documentation/ant-builder.html
 
         // Let's start by copying movies.xml to movies_copy.xml in the same directory using Ant's Copy task:
         // http://ant.apache.org/manual/Tasks/copy.html

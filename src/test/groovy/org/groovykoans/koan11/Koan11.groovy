@@ -16,8 +16,8 @@ import java.sql.PreparedStatement
  * Koans11 - Groovy and SQL
  *
  * Reading list:
- *   * http://groovy.codehaus.org/Database+features
- *   * http://groovy.codehaus.org/api/groovy/sql/DataSet.html
+ *   * http://groovy-lang.org/databases.html
+ *   * http://docs.groovy-lang.org/latest/html/api/groovy/sql/DataSet.html
  *
  */
 class Koan11 extends GroovyTestCase {
@@ -29,7 +29,7 @@ class Koan11 extends GroovyTestCase {
     void test01_CreateDb() {
 
         // Groovy makes it very easy to access databases.
-        // You can find some info here: http://groovy.codehaus.org/Database+features
+        // You can find some info here: http://groovy-lang.org/databases.html
         // Suppose we wanted to create an in-memory H2 database in Java and execute some commands:
         Connection javaConnection = null;
         try {
@@ -84,7 +84,7 @@ class Koan11 extends GroovyTestCase {
             assert db.firstRow('select count(*) c from Person').c == 39
 
             // Groovy also allows a syntax that doesn't involve SQL at all. Add one more person (anyone) using the
-            // db.dataSet('PERSON') method. See http://groovy.codehaus.org/api/groovy/sql/DataSet.html
+            // db.dataSet('PERSON') method. See http://docs.groovy-lang.org/latest/html/api/groovy/sql/DataSet.html
             def person = db.dataSet('PERSON')
             // ------------ START EDITING HERE ----------------------
             person.add(firstname: 'William', lastname: 'Shatner')
