@@ -5,6 +5,8 @@ developers up to speed on Groovy features and common idioms. It starts by teachi
 blocks, and gradually builds your knowledge towards metaprogramming, slurpers, and all the goodness Groovy has
 to offer.
 
+![Build Status](https://api.travis-ci.org/nadavc/groovykoans.svg?branch=master)
+
 ## Getting Started ##
 1.  Make sure you have [JDK 1.6+][jdk] installed 
 2.  Download and unzip the [Koans][zip] (or clone the GitHub repository with `$ git clone https://github.com/nadavc/groovykoans.git`)
