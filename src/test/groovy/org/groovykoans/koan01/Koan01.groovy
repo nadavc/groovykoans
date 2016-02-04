@@ -26,7 +26,7 @@ class Koan01 extends GroovyTestCase {
 
         // Groovy can be used solely with Java syntax. You have full control over what facet of Groovy you want.
 
-        // Let's start. First - Groovy requires much less boiletplate code. For example, in Groovy we don't
+        // Let's start. First - Groovy requires much less boilerplate code. For example, in Groovy we don't
         // have to use semicolons at all. As a matter of fact, we don't always need to define the type of the variable!
         boolean assertion = false
         def hello = "Hola"
