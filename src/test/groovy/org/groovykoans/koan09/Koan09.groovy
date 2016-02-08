@@ -15,7 +15,7 @@ package org.groovykoans.koan09
  *   * http://mrhaki.blogspot.com/2009/11/groovy-goodness-intercept-methods-with.html
  *   * http://docs.groovy-lang.org/latest/html/documentation/index.html#_closures
  *   * http://stackoverflow.com/questions/8120949/what-does-delegate-mean-in-groovy/8121750#8121750
- *   * http://docs.groovy-lang.org/latest/html/documentation/index.html#_expando
+ *   * http://docs.groovy-lang.org/latest/html/documentation/index.html#_invokemethod
  *   * http://mrhaki.blogspot.com/2009/12/groovy-goodness-adding-or-overriding.html
  *   * http://www.codinghorror.com/blog/2007/02/why-cant-programmers-program.html,
  *
@@ -138,7 +138,7 @@ class Koan09 extends GroovyTestCase {
         assert robot.y == -1
 
         // Wouldn't it be nicer if we could create shorthand versions for combo moves? For example, goLeftLeftRightDown()?
-        // Read about invokeMethod() here: http://docs.groovy-lang.org/latest/html/documentation/index.html#_expando
+        // Read about invokeMethod() here: http://docs.groovy-lang.org/latest/html/documentation/index.html#_invokemethod
         // invokeMethod() allows you to intercept all method calls, even if the method doesn't exist.
 
         // Using invokeMethod(), handle every possible goXYZ combination... Regular expressions will come in handy.
