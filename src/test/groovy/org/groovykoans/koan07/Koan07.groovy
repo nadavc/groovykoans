@@ -160,7 +160,7 @@ and can become difficult to maintain"""
     void test06_MultilineRegexWithComments() {
         // Regular expression can become lengthy and hard to read. Groovy solves this by adding a special
         // "extended" (x) flag that ignores newlines and spaces. Read about it here:
-        // http://www.groovy-lang.org/operators.html#_regular_expression_operators
+        // http://www.ngdc.noaa.gov/wiki/index.php/Regular_Expressions_in_Groovy#The_eXtended_Pattern_Match_Flag_.28x.29
 
         // Let's take the text from the exercise above:
         def text = '''|Item          # Sold  Leftover
