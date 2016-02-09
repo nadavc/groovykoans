@@ -15,7 +15,7 @@ import spock.lang.Unroll
  * Koan13 - Spock testing framework
  *
  * Reading list:
- *   * http://docs.spockframework.org/en/latest/data_driven_testing.html
+ *   * https://spockframework.github.io/spock/docs/1.0/data_driven_testing.html
  */
 @Stepwise
 class Koan13 extends Specification {
