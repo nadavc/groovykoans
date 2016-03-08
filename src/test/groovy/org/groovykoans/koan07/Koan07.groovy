@@ -171,12 +171,12 @@ and can become difficult to maintain"""
         // create the same regular expression to sum the total leftovers, but this time document the regex
         String regexp
         // ------------ START EDITING HERE ----------------------
-        regexp = /(?smx)
-                 (.*?)      # item name
+        regexp = /(?smx)    # Why smx ??? where x works fine
+                 (.*?)      # 1: item name
                  \s+        # space
-                 (\d+)      # number sold
+                 (\d+)      # 2: number sold
                  \s+        # space
-                 (\d+)      # leftover/
+                 (\d+)      # 3: leftover/
         // ------------ STOP EDITING HERE  ----------------------
         def sum = text.findAll(regexp) { it[3].toInteger() }.sum()
         // ^^ This is even more concise than the previous example! Choose the one you feel most comfortable with.
