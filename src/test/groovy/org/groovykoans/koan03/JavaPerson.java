@@ -14,8 +14,9 @@ import java.io.Serializable;
  * First and last name can be modified, but ssn is forever.
  */
 public class JavaPerson implements Serializable {
-
-    private String firstName;
+	private static final long serialVersionUID = 1L;
+	
+	private String firstName;
     private String lastName;
     private final String ssn;
 
