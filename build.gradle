@@ -5,89 +5,213 @@
  * See the COPYING file for more details.
  */
 
+/*
+ * List of tasks that you may need: 
+ * 
+ * - koan<Number> - Runs a single Koan.
+ * - dependencyUpdates - check for new dependency versions. 
+ * 
+ * Project properties (for use with -P):
+ * 
+ * - ff - apply 'fail fast' JUnit rule.
+ * - fe - show the first error only on the console.
+ * 
+ */ 
+ 
 import java.awt.*
-import java.util.List
+import org.gradle.util.WrapUtil
 
-apply plugin: 'groovy'
-apply from: 'gradle/idea.gradle'
-apply from: 'gradle/eclipse.gradle'
+plugins {
+	id 'groovy'
+	id 'idea'
+	id 'eclipse'
 
-version = '0.5'
+	// Gradle Versions Plugin: https://github.com/ben-manes/gradle-versions-plugin
+	// https://bintray.com/fooberger/maven/com.github.ben-manes%3Agradle-versions-plugin
+	// Use: repositories { jcenter() }
+	id 'com.github.ben-manes.versions' version '0.20.0'
+}
+
+/*
+ *  Version 0.6: JUnit 5 engine support added. Tested with Gradle 4.9.
+ */
+version = '0.6'
 
 repositories {
-    jcenter()
+	jcenter()
 }
 
 dependencies {
-    def groovyComponents = ['groovy', 'groovy-ant', 'groovy-sql', 'groovy-test']
-    testCompile groovyComponents.collect { "org.codehaus.groovy:$it:2.4.3" }
-    testCompile 'com.h2database:h2:1.3.168'
-    testCompile 'org.spockframework:spock-core:1.0-groovy-2.4'
+	def final groovyComponents = ['groovy', 'groovy-ant', 'groovy-sql', 'groovy-test']
+	def final junitVersion = '5.2.0'
+
+	testCompile groovyComponents.collect { "org.codehaus.groovy:$it:2.5.2" }
+	testCompile 'com.h2database:h2:1.4.197'
+	testCompile 'org.spockframework:spock-core:1.1-groovy-2.4'
+
+	// ----------------------
+	// JUnit modules
+	//
+	testRuntime group: 'org.junit.vintage', name: 'junit-vintage-engine', version: junitVersion // JUnit 4 support
+	// JUnit modules
+	// ----------------------
+}
+
+wrapper {
+	gradleVersion = '4.9'
 }
 
 task removeSolutions {
-    description = 'Removes the solutions from all Koans, so you can start fresh!'
+	description = 'Removes the solutions from all Koans, so you can start fresh!'
 
-    doLast {
-        def solutionsRemoved = 0
-        def solutionRegex = $/(?sm)(// -{12} START EDITING HERE -{22})(.*?)(\s+// -{12} STOP EDITING HERE  -{22})/$
-        sourceSets.test.allSource.files.each { File sourceFile ->
-            solutionsRemoved += (sourceFile.text =~ solutionRegex).count
-            sourceFile.text = sourceFile.text.replaceAll(solutionRegex, '$1\n\n$3')
-        }
-        println "Removed $solutionsRemoved solutions from Koans. Good luck!"
-    }
+	doLast {
+		def solutionsRemoved = 0
+		def solutionRegex = $/(?sm)(// -{12} START EDITING HERE -{22})(.*?)(\s+// -{12} STOP EDITING HERE  -{22})/$
+		sourceSets.test.allSource.files.each { File sourceFile ->
+			solutionsRemoved += (sourceFile.text =~ solutionRegex).count
+			sourceFile.text = sourceFile.text.replaceAll(solutionRegex, '$1\n\n$3')
+		}
+		println "Removed $solutionsRemoved solutions from Koans. Good luck!"
+	}
+}
+
+class TestInformation {
+	def td
+	def tr
+
+	String getClassName()  { td.className }
+	String getMethodName() { td.name }
+	String getFullName()   { td.className + '.' + td.name }
+}
+def newTestInfo = {td, tr -> new TestInformation(td: td, tr: tr)}
+def failedTests = []
+
+test {
+	description "Execute a set of tests"
+	// Setup JUnit...
+	useJUnitPlatform()
+
+	testLogging {
+		events "PASSED", "FAILED" //, "STARTED", "SKIPPED"
+		showStandardStreams true
+	}
+
+	if (project.hasProperty('ff')) {
+		println "Test task: Adding failFast=true"
+		failFast true
+	}
+
+	onOutput {td, event ->
+		println event.message
+	}
+
+	beforeSuite { td ->
+		if (td.className != null) println "\n*** Test suite: ${td}"
+	}
+
+	afterSuite { td, tr ->
+		if (tr.exception != null) println "\n${tr}: ${td}, exception message:\n\n${tr.exception.message}"
+	}
+
+	afterTest { td, tr ->
+		if (tr.exception != null) {
+			failedTests << newTestInfo(td, tr) // Add a test result to the list
+			// println "\n${tr}: ${td}, exception message:\n\n${tr.exception.message}"
+		}
+	}
+}
+
+// launch browser if test failed. otherwise show that koan is complete
+test.finalizedBy('afterTests')
+task afterTests() {
+	doFirst {
+		if (tasks['test'].state.failure) {
+			println "Errors found. You can use lynx or another browser to view the report: ${tasks['test'].reports.html.destination}/index.html"
+
+			// Output errors to the console...
+			if (failedTests) {
+				def cRed = "" + (char) 27 + '[31m'
+				def cDef =  "" + (char) 27 + '[39m'
+				def sorted = failedTests.toSorted {a, b -> a.fullName <=> b.fullName}
+				def hdr = "--- THERE ARE FAILED TESTS ---"
+				def dashLine = '-' * hdr.length()
+
+				def showError = { testInfo ->
+					def ex = testInfo.tr.exception
+					println "\n${cRed}-- ${testInfo.fullName} --${cDef}\n"
+					println "${ex.stackTrace.find {it.className == testInfo.className && it.methodName == testInfo.methodName}}:\n"
+					println ex.message
+				}
+
+				println "\n${dashLine}\n${hdr}\n${dashLine}"
+
+				// Show just a first error if 'fe' property specified (-Pfe)
+				if (project.hasProperty('fe'))
+					showError sorted[0] // Show the first error
+				else
+					sorted.each showError // Show all errors
+
+				println dashLine
+			}
+			
+			// Open the report with a default browser...
+			Desktop.desktop.browse(new File(tasks['test'].reports.html.destination, 'index.html').toURI())
+		} else {
+			println "Koan is complete. Well done!"
+		}
+	}
 }
 
 // Adapted from http://www.practicalgradle.org/blog/2011/01/convenient-test-execution-with-camel-case-support/
 tasks.addRule('Pattern: koan<Number>: Runs a single Koan') { String taskName ->
-    if (taskName.startsWith('koan') && taskName.length() > 5) {
-        // create a dummy task for the task name specified on the command line
-        def dummyTask = task(taskName)
-        def koanName = taskName[0].toUpperCase() + taskName[1..-1]
+	if (taskName.startsWith('koan') && taskName.length() > 5) {
+		// create a dummy task for the task name specified on the command line
+		def dummyTask = task(taskName)
+		def koanName = taskName[0].toUpperCase() + taskName[1..-1]
 
-        // make all Test tasks a dependency of the dummy task and reset the includes
-        tasks.withType(Test) { testTask ->
-            logger.info("Single Koan Execution: apply include pattern to Test task <$testTask.name>")
-            testTask.includes = WrapUtil.toSet("**/${koanName}.class")
-            dummyTask.dependsOn testTask
-        }
-    }
-}
-
-task wrapper(type: Wrapper) {
-    gradleVersion = '2.8'
+		// make all Test tasks a dependency of the dummy task and reset the includes
+		tasks.withType(Test) { testTask ->
+			logger.info("Single Koan Execution: apply include pattern to Test task <$testTask.name>")
+			testTask.includes = WrapUtil.toSet("**/${koanName}.class")
+			dummyTask.dependsOn testTask
+		}
+	}
 }
 
 // show welcome message
-task sayHello << {
-    List<String> lines = file('gradle/one-liners.txt').readLines()
-    def quote = lines.get(new Random().nextInt(lines.size() - 1))
-    println "Groovy Koans ${version}:\n${quote}"
-    println "${'-' * quote.size()}\n"
+task sayHello {
+	doLast {
+		def lines = file('gradle/one-liners.txt').readLines()
+		def quote = lines.get(new Random().nextInt(lines.size() - 1))
+		println "Groovy Koans ${version}:\n${quote}"
+		println "${'-' * quote.size()}\n"
+	}
 }
-
 test.dependsOn sayHello
 
-// launch browser if test failed. otherwise show that koan is complete
-gradle.taskGraph.afterTask { task, taskState ->
-    if (task.name != 'test')
-        return
+//
+// Check for new versions of dependencies
+//
+dependencyUpdates {
+//  revision 'release' // Only look for a new releases
 
-    if (taskState.failure) {
-        String testRepDir = project.testReportDir
-        Desktop.desktop.browse(new File(testRepDir, 'index.html').toURI())
-    } else {
-        println "Koan is complete. Well done!"
-    }
-}
-
-// since we're running in quiet logging, show the user what tests are running
-tasks.withType(Test) { testTask ->
-    testTask.beforeTest { descriptor ->
-        print "Running exercises in $descriptor.name()".padRight(60, '.')
-    }
-    testTask.afterTest { descriptor, result ->
-        println result.resultType
-    }
+  // Exclude pre-release versions from the list...
+  resolutionStrategy = {
+	componentSelection { rules ->
+	  rules.all { ComponentSelection selection ->
+		boolean rejected = [
+		  'alpha',
+		  'beta',
+		  'rc',
+		  'cr',
+		  'm'
+		].any { qualifier ->
+		  selection.candidate.version ==~ /(?i).*[\.-]${qualifier}.*/
+		}
+		if (rejected) {
+		  selection.reject('Release candidate')
+		}
+	  }
+	}
+  }
 }
