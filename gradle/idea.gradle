@@ -15,4 +15,5 @@ idea.project {
     }
 }
 
-tasks.remove(cleanIdeaWorkspace)
+tasks.getByName("cleanIdeaWorkspace").setEnabled(false)
+
