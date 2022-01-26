@@ -5,7 +5,7 @@ developers up to speed on Groovy features and common idioms. It starts by teachi
 blocks, and gradually builds your knowledge towards metaprogramming, slurpers, and all the goodness Groovy has
 to offer.
 
-![Build Status](https://api.travis-ci.org/nadavc/groovykoans.svg?branch=master)
+![Build Status](https://api.travis-ci.org/varkychen/groovykoans.svg?branch=master)
 
 ## Getting Started ##
 1.  Make sure you have [JDK 17][jdk] installed
@@ -25,7 +25,7 @@ to offer.
 #### I like Eclipse. How can I use it to debug/edit the Koans? ####
 
 * Execute `./gradlew eclipse`
-* Download and install [Eclipise IDE for Java Developers][eclipse]
+* Download and install [Eclipse IDE for Java Developers][eclipse]
 * In Eclipse, `File -> Import...`, `Existing Projects into Workspace`, and select the project directory
 
 #### I am forced to work behind a proxy. Can I still run the Koans? ####
@@ -58,8 +58,8 @@ Follow me on [Twitter][twitter] or [GitHub][github] for updates.
 
 ## Credits and License ##
 The Koan concept started way back in [Zen][zen] practice. It was then adapted by the good folks of
-[rubykoans.com][rubykoans] and perfected by [Neo4j][neo4j]. The Groovy Koans project is licensed under the
-[WTFPL][wtfpl].
+[rubykoans.com][rubykoans] and perfected by [Neo4j][neo4j]. The Groovy Koans project was created by
+[Nadav Cohen][nadavc] and is licensed under the [WTFPL][wtfpl].
 
 
 Please feel free to leave comments and pull requests :)
@@ -67,12 +67,13 @@ Please feel free to leave comments and pull requests :)
 Enjoy!
 
 [jdk]: http://www.oracle.com/technetwork/java/javase/downloads/index.html
-[zip]: https://github.com/nadavc/groovykoans/archive/master.zip
+[zip]: https://github.com/varkychen/groovykoans/archive/master.zip
 [ideac]: http://www.jetbrains.com/idea/download/
 [eclipse]: https://eclipse.org/downloads/
-[twitter]: http://twitter.com/nadavc
-[github]: http://github.com/nadavc
+[twitter]: http://twitter.com/varkychen
+[github]: http://github.com/varkychen
 [zen]: http://en.wikipedia.org/wiki/K%C5%8Dan
 [rubykoans]: http://rubykoans.org
 [neo4j]: https://github.com/jimwebber/neo4j-tutorial
 [wtfpl]: http://www.wtfpl.net/
+[nadavc]: https://github.com/nadavc/groovykoans
