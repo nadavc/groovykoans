@@ -19,8 +19,11 @@ repositories {
 }
 
 dependencies {
-    def groovyComponents = ['groovy', 'groovy-ant', 'groovy-sql', 'groovy-test', 'groovy-xml']
-    implementation groovyComponents.collect { "org.codehaus.groovy:$it:3.0.9" }
+    implementation 'org.codehaus.groovy:groovy:3.0.9'
+    implementation 'org.codehaus.groovy:groovy-ant:3.0.9'
+    implementation 'org.codehaus.groovy:groovy-sql:3.0.9'
+    implementation 'org.codehaus.groovy:groovy-test:3.0.9'
+    implementation 'org.codehaus.groovy:groovy-xml:3.0.9'
     testImplementation 'com.h2database:h2:2.1.210'
     testImplementation 'org.spockframework:spock-core:2.0-groovy-3.0'
 }
