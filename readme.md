@@ -5,7 +5,7 @@ developers up to speed on Groovy features and common idioms. It starts by teachi
 blocks, and gradually builds your knowledge towards metaprogramming, slurpers, and all the goodness Groovy has
 to offer.
 
-![Build Status](https://api.travis-ci.org/varkychen/groovykoans.svg?branch=master)
+![Build Status](![example workflow](https://github.com/varkychen/groovykoans/.github/workflows/gradle.yml/badge.svg)
 
 ## Getting Started ##
 1.  Make sure you have [JDK 17][jdk] installed
