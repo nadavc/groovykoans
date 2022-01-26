@@ -19,10 +19,10 @@ repositories {
 }
 
 dependencies {
-    def groovyComponents = ['groovy', 'groovy-ant', 'groovy-sql', 'groovy-test']
-    implementation groovyComponents.collect { "org.codehaus.groovy:$it:2.4.3" }
-    testImplementation 'com.h2database:h2:1.3.168'
-    testImplementation 'org.spockframework:spock-core:1.0-groovy-2.4'
+    def groovyComponents = ['groovy', 'groovy-ant', 'groovy-sql', 'groovy-test', 'groovy-xml']
+    implementation groovyComponents.collect { "org.codehaus.groovy:$it:3.0.9" }
+    testImplementation 'com.h2database:h2:2.1.210'
+    testImplementation 'org.spockframework:spock-core:2.0-groovy-3.0'
 }
 
 task removeSolutions {
@@ -31,7 +31,7 @@ task removeSolutions {
     doLast {
         def solutionsRemoved = 0
         def solutionRegex = $/(?sm)(// -{12} START EDITING HERE -{22})(.*?)(\s+// -{12} STOP EDITING HERE  -{22})/$
-        sourceSets.test.allSource.files.each { File sourceFile ->
+        sourceSets.test.allSource.files.each { sourceFile ->
             solutionsRemoved += (sourceFile.text =~ solutionRegex).count
             sourceFile.text = sourceFile.text.replaceAll(solutionRegex, '$1\n\n$3')
         }
@@ -72,7 +72,7 @@ gradle.taskGraph.afterTask { task, taskState ->
 
     if (taskState.failure) {
         String testRepDir = project.testReportDir
-        Desktop.desktop.browse(new File(testRepDir, 'index.html').toURI())
+        Desktop.desktop.browse(new File(testRepDir, 'test/index.html').toURI())
     } else {
         println "Koan is complete. Well done!"
     }

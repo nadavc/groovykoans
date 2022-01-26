@@ -7,22 +7,32 @@
 
 package org.groovykoans.koan01
 
+import org.junit.Test
+
 /**
  * Koan01 - Groovy 101
  *
  * Resource list:
- *   http://docs.groovy-lang.org/latest/html/api/groovy/util/GroovyTestCase.html
+ *   https://docs.groovy-lang.org/docs/groovy-2.4.3/html/documentation/#_junit_4
+ *   https://docs.groovy-lang.org/docs/groovy-2.4.3/html/api/groovy/test/GroovyAssert.html
+ *   https://docs.groovy-lang.org/docs/groovy-2.4.3/html/documentation/#_power_assertion
  *   http://docs.groovy-lang.org/latest/html/documentation/index.html#all-strings
  *   http://groovy-lang.org/groovy-dev-kit.html#_working_with_collections
  *   http://groovy-lang.org/groovy-dev-kit.html#_working_with_collections
  *   http://docs.groovy-lang.org/latest/html/groovy-jdk/java/util/List.html
  *   http://docs.groovy-lang.org/latest/html/documentation/index.html#groovy-operators
  */
-class Koan01 extends GroovyTestCase {
+class Koan01 {
 
+    @Test
     void test01_AssertionsAndSomeSyntax() {
-        // Groovy introduces the GroovyTestCase for testing. We are using it as the base class for our unit tests.
-        // Docs for GroovyTestCase can be found at: http://docs.groovy-lang.org/latest/html/api/groovy/util/GroovyTestCase.html
+        // Groovy introduces the GroovyTestCase for testing with JUnit 3. JUnit 4 test cases can be used without restrictions
+        // as well. We are using JUnit 4 Tests using @Test Annotations. GroovyAssert class holds static assert methods that can
+        // be used instead of GroovyTestCase. However, it's a good practice to use the Power Assertion statement instead.
+        // Relevant Documentation links can be found below:
+        // Groovy JUnit 4       -> https://docs.groovy-lang.org/docs/groovy-2.4.3/html/documentation/#_junit_4
+        // GroovyAssert         -> https://docs.groovy-lang.org/docs/groovy-2.4.3/html/api/groovy/test/GroovyAssert.html
+        // Groovy Power Asserts -> https://docs.groovy-lang.org/docs/groovy-2.4.3/html/documentation/#_power_assertion
 
         // Groovy can be used solely with Java syntax. You have full control over what facet of Groovy you want.
 
@@ -55,7 +65,8 @@ class Koan01 extends GroovyTestCase {
         // Create the target string with the ${} mechanism. Remember that ${} can contain method calls too!
         String result
         // ------------ START EDITING HERE ----------------------
-        result = "The size of the string '${greeting}' is ${greeting.size()}"
+
+
         // ------------ STOP EDITING HERE  ----------------------
 
         assert result == "The size of the string 'Hello George, how are you?' is 26"
@@ -69,7 +80,8 @@ class Koan01 extends GroovyTestCase {
         // Concatenate the two values of 'right' and 'left' into result to proceed using Groovy syntax
         def result
         // ------------ START EDITING HERE ----------------------
-        result = map['right'] + map['left']
+
+
         // ------------ STOP EDITING HERE  ----------------------
 
         assert result.toCharArray().size() == 16
@@ -90,7 +102,8 @@ class Koan01 extends GroovyTestCase {
         // Add the missing item to the Groovy list. Pay attention to the order of the items.
         // Hint: you can use either Java's add(int, String) or Groovy's plus() method.
         // ------------ START EDITING HERE ----------------------
-        groovyList = groovyList.plus(1, 'Queen')
+
+
         // ------------ STOP EDITING HERE  ----------------------
 
         // Note how Groovy allows you to compare the *content* of the lists
@@ -131,7 +144,8 @@ class Koan01 extends GroovyTestCase {
     private String createMessageForUser(UserService userService) {
         def message
         // ------------ START EDITING HERE ----------------------
-        message = "Hello ${userService.loggedInUser?.firstName ?: 'Anonymous'}!"
+
+
         // ------------ STOP EDITING HERE  ----------------------
 
         // Note how Groovy doesn't require the 'return' keyword! It will simply return the last expression.
