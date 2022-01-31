@@ -7,6 +7,8 @@
 
 package org.groovykoans.koan06
 
+import groovy.test.GroovyTestCase
+
 /**
  * Koan06 - More closures
  *

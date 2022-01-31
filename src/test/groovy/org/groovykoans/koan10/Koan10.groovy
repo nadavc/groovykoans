@@ -7,7 +7,11 @@
 
 package org.groovykoans.koan10
 
+import groovy.ant.AntBuilder
 import groovy.xml.MarkupBuilder
+import groovy.xml.XmlNodePrinter
+import groovy.xml.XmlParser
+import groovy.xml.XmlSlurper
 
 /**
  * Koan10 - Slurpers and Builders

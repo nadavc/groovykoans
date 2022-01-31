@@ -6,6 +6,9 @@
  */
 
 package org.groovykoans.koan12
+
+import groovy.test.GroovyTestCase
+
 /**
  * Koans12 - Built-in testing support in Groovy
  *

@@ -7,6 +7,8 @@
 
 package org.groovykoans.koan05
 
+import groovy.test.GroovyTestCase
+
 /**
  * Koan05 - Iterations in Groovy
  *

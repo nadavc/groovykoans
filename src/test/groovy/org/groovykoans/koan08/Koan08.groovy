@@ -7,6 +7,8 @@
 
 package org.groovykoans.koan08
 
+import groovy.test.GroovyTestCase
+
 /**
  * Koan08 - More goodness
  *

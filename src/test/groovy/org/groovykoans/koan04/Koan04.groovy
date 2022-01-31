@@ -7,6 +7,8 @@
 
 package org.groovykoans.koan04
 
+import groovy.test.GroovyTestCase
+
 /**
  * Koan04 - Closures
  *

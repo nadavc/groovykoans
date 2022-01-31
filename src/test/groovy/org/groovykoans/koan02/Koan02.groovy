@@ -7,6 +7,8 @@
 
 package org.groovykoans.koan02
 
+import groovy.test.GroovyTestCase
+
 /**
  * Koan02 - Groovy Truth
  *

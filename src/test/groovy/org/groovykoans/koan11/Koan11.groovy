@@ -8,6 +8,8 @@
 package org.groovykoans.koan11
 
 import groovy.sql.Sql
+import groovy.test.GroovyTestCase
+import groovy.xml.XmlSlurper
 
 import java.sql.Connection
 import java.sql.DriverManager

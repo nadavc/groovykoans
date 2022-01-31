@@ -7,6 +7,8 @@
 
 package org.groovykoans.koan07
 
+import groovy.test.GroovyTestCase
+
 import java.util.regex.Matcher
 import java.util.regex.Pattern
 
