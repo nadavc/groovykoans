@@ -7,7 +7,9 @@
 
 package org.groovykoans.koan01
 
-import org.junit.Test
+import org.junit.jupiter.api.DisplayName
+import org.junit.jupiter.api.Test
+
 
 /**
  * Koan01 - Groovy 101
@@ -25,7 +27,8 @@ import org.junit.Test
 class Koan01 {
 
     @Test
-    void test01_AssertionsAndSomeSyntax() {
+    @DisplayName("Assertion and some Syntax")
+    public void test01_AssertionsAndSomeSyntax() {
         // Groovy introduces the GroovyTestCase for testing with JUnit 3. JUnit 4 test cases can be used without restrictions
         // as well. We are using JUnit 4 Tests using @Test Annotations. GroovyAssert class holds static assert methods that can
         // be used instead of GroovyTestCase. However, it's a good practice to use the Power Assertion statement instead.
