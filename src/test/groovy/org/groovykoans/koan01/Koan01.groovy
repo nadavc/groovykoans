@@ -54,7 +54,8 @@ class Koan01 {
         assert hello == "Hello", 'Modify "Hola" to "Hello" to proceed'
     }
 
-
+    @Test
+    @DisplayName("GStrings")
     void test02_GStrings() {
         // Groovy allows you to use either regular quotes (') or double-quotes (") for String declarations.
         // The difference is that double-quotes create a GString, which is a super-powered String.
@@ -69,27 +70,31 @@ class Koan01 {
         String result
         // ------------ START EDITING HERE ----------------------
 
+        result = "The size of the string '${greeting}' is ${greeting.length()}"
 
         // ------------ STOP EDITING HERE  ----------------------
 
         assert result == "The size of the string 'Hello George, how are you?' is 26"
     }
 
+    @Test
     void test03_MapsInGroovy() {
         // Maps are also special citizens in Groovyland.
-        // Docs can be found here: http://groovy-lang.org/groovy-dev-kit.html#_working_with_collections
+        // Docs can be found here: http://groovy-lang.org/groovy-dev-kit.html#Collections-Maps
         def map = [right: 'derecha', left: 'izquierda']
 
         // Concatenate the two values of 'right' and 'left' into result to proceed using Groovy syntax
         def result
         // ------------ START EDITING HERE ----------------------
 
+        result = map.right + map.left
 
         // ------------ STOP EDITING HERE  ----------------------
 
         assert result.toCharArray().size() == 16
     }
 
+    @Test
     void test04_Lists() {
         // In Java, list creation can be somewhat cumbersome:
         List<String> javaList = new ArrayList<String>();
@@ -98,7 +103,7 @@ class Koan01 {
         javaList.add("Prince");
 
         // In Groovy, this is simplified to:
-        // (See http://groovy-lang.org/groovy-dev-kit.html#_working_with_collections
+        // (See http://groovy-lang.org/groovy-dev-kit.html#Collections-Lists
         // and http://docs.groovy-lang.org/latest/html/groovy-jdk/java/util/List.html)
         def groovyList = ['King', 'Prince']
 
@@ -106,6 +111,7 @@ class Koan01 {
         // Hint: you can use either Java's add(int, String) or Groovy's plus() method.
         // ------------ START EDITING HERE ----------------------
 
+        groovyList = groovyList.plus(1, 'Queen')
 
         // ------------ STOP EDITING HERE  ----------------------
 
