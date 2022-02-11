@@ -78,6 +78,7 @@ class Koan01 {
     }
 
     @Test
+    @DisplayName("Maps in Groovy")
     void test03_MapsInGroovy() {
         // Maps are also special citizens in Groovyland.
         // Docs can be found here: http://groovy-lang.org/groovy-dev-kit.html#Collections-Maps
@@ -95,6 +96,7 @@ class Koan01 {
     }
 
     @Test
+    @DisplayName("Lists")
     void test04_Lists() {
         // In Java, list creation can be somewhat cumbersome:
         List<String> javaList = new ArrayList<String>();
@@ -119,11 +121,15 @@ class Koan01 {
         assert groovyList == javaList
     }
 
+    @Test
+    @DisplayName("Elvis and Safe Navigation")
     void test05_ElvisAndSafeNavigation() {
         // Preparation code for the examples that follow. We'll get to this code in later Koans.
         User player = new User('Ronaldo', 'Nazário de Lima', 'ron', null)
-        UserService userServiceWithUserLoggedIn = [getLoggedInUser: { player }] as UserService
-        UserService userServiceWithoutLoggedInUser = [getLoggedInUser: { null }] as UserService
+
+        // Psst!! Groovy coercion. Thank me later ;-)
+        UserService userServiceWithUserLoggedIn = { player }
+        UserService userServiceWithoutLoggedInUser = { null }
 
         // Groovy introduces two convenient operators for dealing with nulls: elvis (?:) and safe navigation (?.)
         // Read all about it at http://docs.groovy-lang.org/latest/html/documentation/index.html#groovy-operators
@@ -150,10 +156,11 @@ class Koan01 {
         assert createMessageForUser(userServiceWithoutLoggedInUser) == 'Hello Anonymous!'
     }
 
-    private String createMessageForUser(UserService userService) {
+    private static String createMessageForUser(UserService userService) {
         def message
         // ------------ START EDITING HERE ----------------------
 
+        message = "Hello ${userService?.loggedInUser?.firstName ?: 'Anonymous'}!"
 
         // ------------ STOP EDITING HERE  ----------------------
 
