@@ -7,7 +7,11 @@
 
 package org.groovykoans.koan10
 
+import groovy.ant.AntBuilder
 import groovy.xml.MarkupBuilder
+import groovy.xml.XmlNodePrinter
+import groovy.xml.XmlParser
+import groovy.xml.XmlSlurper
 
 /**
  * Koan10 - Slurpers and Builders
@@ -25,7 +29,7 @@ import groovy.xml.MarkupBuilder
  *  * http://ant.apache.org/manual/Tasks/copy.html
  *  * http://ant.apache.org/manual/Tasks/checksum.html
  */
-class Koan10 extends GroovyTestCase {
+class Koan10 {
 
     void test01_XmlSlurpersReader() {
         // Time to learn about the built-in magic that Groovy brings to the table.

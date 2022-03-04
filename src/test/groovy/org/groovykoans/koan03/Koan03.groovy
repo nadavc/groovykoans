@@ -7,6 +7,8 @@
 
 package org.groovykoans.koan03
 
+import groovy.test.GroovyTestCase
+
 /**
  * Koan03 - GroovyBeans and classes
  *

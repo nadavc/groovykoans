@@ -7,6 +7,8 @@
 
 package org.groovykoans.koan09
 
+import groovy.test.GroovyTestCase
+
 /**
  * Koan09 - Meta-programming (Meta Object Protocol)
  *
